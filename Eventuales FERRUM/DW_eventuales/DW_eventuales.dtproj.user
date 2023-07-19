@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataTransformationsUserConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Configurations>
+    <Configuration>
+      <Name>Development</Name>
+      <Options>
+        <AssessmentRuleSuppressionSetting />
+        <UseWinAuth>false</UseWinAuth>
+        <WinAuthUserName />
+        <WinAuthDomain />
+        <UserIDs>
+          <ConfigurationSetting>
+            <Id>{B1B7296E-ABD8-452E-B771-C463BA8095C5}</Id>
+            <Name>{B1B7296E-ABD8-452E-B771-C463BA8095C5}</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIqXjDgVII0KJV7pusLWjVQAAAABOAAAAewBCADEAQgA3ADIAOQA2AEUALQBBAEIARAA4AC0ANAA1ADIARQAtAEIANwA3ADEALQBDADQANgAzAEIAQQA4ADAAOQA1AEMANQB9AAAAEGYAAAABAAAgAAAAoOCYaOIX3Cltc62F35BFv62vwS8JOi/h+rp1ePQ6s2EAAAAADoAAAAACAAAgAAAAmX8zDZOIKtORdVEETAa6ycj8BIA5MAw6t06Rl/sJM98gAAAAQFJkRPuMAopqH7TsWU1l/L+/XDjOcevvYQNAcgHC8t1AAAAA5m3WcLg2Pmx7idKmj+TmzpzQhPgZHwjIfq+TxojzsTU0IKJovATFmqCMWHKX+gpMJj11q2AFEGaTNyXwfObE7A==</Value>
+          </ConfigurationSetting>
+          <ConfigurationSetting>
+            <Id>{B0F7213E-94F5-4B7F-A14F-F9F475D769FB}</Id>
+            <Name>{B0F7213E-94F5-4B7F-A14F-F9F475D769FB}</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIqXjDgVII0KJV7pusLWjVQAAAABOAAAAewBCADAARgA3ADIAMQAzAEUALQA5ADQARgA1AC0ANABCADcARgAtAEEAMQA0AEYALQBGADkARgA0ADcANQBEADcANgA5AEYAQgB9AAAAEGYAAAABAAAgAAAAPKzZuBOoEZIl7f4ifLHJFwN1ApJxRrmS06Ro8Ce02HYAAAAADoAAAAACAAAgAAAAX1JyqvnO048C5gd6knqq31/QDK2sBQ1Y+5lamYIFGUQgAAAAssQUZ98NEK6htsrz0eVv5/mI1WNMT08g7l+oJHCWUJRAAAAA3aGj/o28hYRe7Xdyta00qQbDCpOpYIwAhgLjV5oJVJrFp6VdG3RTKpfkHNbF6nszW0L9BAzlofXr13WPEizAHw==</Value>
+          </ConfigurationSetting>
+        </UserIDs>
+        <UserPasswords>
+          <ConfigurationSetting>
+            <Id>{B1B7296E-ABD8-452E-B771-C463BA8095C5}</Id>
+            <Name>{B1B7296E-ABD8-452E-B771-C463BA8095C5}</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIqXjDgVII0KJV7pusLWjVQAAAABOAAAAewBCADEAQgA3ADIAOQA2AEUALQBBAEIARAA4AC0ANAA1ADIARQAtAEIANwA3ADEALQBDADQANgAzAEIAQQA4ADAAOQA1AEMANQB9AAAAEGYAAAABAAAgAAAAcOaWDUlNg5OQn3i8yOHZ7iQi7W2N9JTtp7qzQMPFTXcAAAAADoAAAAACAAAgAAAAc68z3Z1elmRnqupi2QMKMbnuy0FfVS1LpDZGZ6AOhi0gAAAAbOiEQ2cpVKAgDTONG8twt2VOg2SS/FQf7SQa0zlDwnJAAAAAEK8k1NIpW7mjSxGoc2+8EqvWTRbLqkDZMQ0fvAMvQtxVjCfD4JF+LVOi7XRHizAtIbHIJiwjKMUxhkYofzJK1g==</Value>
+          </ConfigurationSetting>
+          <ConfigurationSetting>
+            <Id>{B0F7213E-94F5-4B7F-A14F-F9F475D769FB}</Id>
+            <Name>{B0F7213E-94F5-4B7F-A14F-F9F475D769FB}</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIqXjDgVII0KJV7pusLWjVQAAAABOAAAAewBCADAARgA3ADIAMQAzAEUALQA5ADQARgA1AC0ANABCADcARgAtAEEAMQA0AEYALQBGADkARgA0ADcANQBEADcANgA5AEYAQgB9AAAAEGYAAAABAAAgAAAAOd1j6AtD4dzn9qp5WG6NCsdT0SlOETBsFnoRUh+u9p4AAAAADoAAAAACAAAgAAAAFCXOuEPIy/89bMUeaRzg+JiAW1LsQL/QlPU93lDVQcsgAAAAmsRSGUWEBGt4K7r7ryDDrfG+x2GoHyCt2Nna3PkM/y1AAAAA1mYWv6ePKA5KFAJc4BVWd+cmyis43cCmy0coHmQXurbC0HRYUKycnmL5MKX+1WuFDY0yVIYwlwRGdM91+nhXYg==</Value>
+          </ConfigurationSetting>
+        </UserPasswords>
+        <OfflineMode>false</OfflineMode>
+        <ProgressReporting>true</ProgressReporting>
+        <ParameterConfigurationSensitiveValues>
+          <ConfigurationSetting>
+            <Id>LastModifiedTime</Id>
+            <Name>LastModifiedTime</Name>
+            <Value xsi:type="xsd:dateTime">2023-06-23T18:03:00.5086539Z</Value>
+          </ConfigurationSetting>
+        </ParameterConfigurationSensitiveValues>
+      </Options>
+    </Configuration>
+  </Configurations>
+</DataTransformationsUserConfiguration>

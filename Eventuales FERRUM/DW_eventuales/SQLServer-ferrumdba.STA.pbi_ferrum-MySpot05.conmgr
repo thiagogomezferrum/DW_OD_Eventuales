@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="SQLServer-ferrumdba.STA.pbi_ferrum"
+  DTS:DTSID="{3E711310-CF6C-4A7C-BFBE-087E31A2632F}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=SQLServer-ferrumdba;User ID=pbi_ferrum;Initial Catalog=STA;Provider=SQLOLEDB.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-DW_eventuales-{3E711310-CF6C-4A7C-BFBE-087E31A2632F}SQLServer-ferrumdba.STA.pbi_ferrum;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="L5ETXPnD66k="
+        p4:IV="AV+9AibGg1ZaOCOQcwknUQ=="
+        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">nmHIDts5x0S8r1uGfYRQtKLRxn51o47VT8EoC5k7KlvEAcNcrTt+RGFbz2eyHbmO/ANM4RBJProualhCpMJMf508y8wnN0IXH9uz3zZOD+52BZFBeh3EWk92yY3jmIQE40ZNpkijmo25aeRjipYpucP9HXlSh+yImZtMjXk0qQk=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

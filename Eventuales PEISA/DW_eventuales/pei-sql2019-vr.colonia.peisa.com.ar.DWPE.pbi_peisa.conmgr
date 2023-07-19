@@ -1,0 +1,19 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="pei-sql2019-vr.colonia.peisa.com.ar.DWPE.pbi_peisa"
+  DTS:DTSID="{B0F7213E-94F5-4B7F-A14F-F9F475D769FB}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=pei-sql2019-vr.colonia.peisa.com.ar;User ID=pbi_peisa;Initial Catalog=DWPE;Provider=SQLOLEDB.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-DW_eventuales-{B0F7213E-94F5-4B7F-A14F-F9F475D769FB}pei-sql2019-vr.colonia.peisa.com.ar.DWPE.pbi_peisa;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="raqoX/SB6jA="
+        p4:IV="clOldWyy+qFj7Iv1huoVHA=="
+        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">eOiBw8sdOltOjSy59sGq9TWZidOS57TK4GyO1RewrIRW8MyJ1G1b/dJ9c6TFdLBY4Wo4MGHUG+JETu0KoomgnWm/WWs5pvGO9wU1S3Da3kSmvcx5ODVREPLn1I75Hm3qIosMv5ttXZ5i+ockschj69Xx9Ck6Hl8vCvwyR/C/Fm8=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

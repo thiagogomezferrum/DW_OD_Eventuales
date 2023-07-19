@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="fv-dw-sql2017.DW_Comercial.desarrollo_dw"
+  DTS:DTSID="{AAB395EF-349D-4C57-AB82-4940D5C38575}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=fv-dw-sql2017;User ID=desarrollo_dw;Initial Catalog=DW_Comercial;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-DW_eventuales-{AAB395EF-349D-4C57-AB82-4940D5C38575}fv-dw-sql2017.DW_Comercial.desarrollo_dw;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIqXjDgVII0KJV7pusLWjVQAAAAACAAAAAAAQZgAAAAEAACAAAABR9yCHe42RPkKyMh/3xzQAOY0h7M02w+upNCB4w4US2wAAAAAOgAAAAAIAACAAAADok1QixxKqn3APc4yVDWWU6JlYNfJSGhDAM5LWQKq3V4AAAACWk6OxPOnolNAuytu0eRNSw+L1SEVN04ceJLW7ZIltDF8a0EX8Xj5aeyA5lg/9k5nrZNNeU+a+Ut7q0l33jWZgITbg32zQXqKL2qgBMigGuPtnZ+X/qVeLBZiSjBUsdgPAuj385T/4M3zhKj9WYvBginqElJfC5F+YNiDyIAKR6kAAAAAZSUWDIZvmRwb2irAy7aDuBe1WPtc0NCDb8mDaluRC7vukmAE/NbndkbG8BGZBXgq6M/IHwTc7m6zNS8uYgR3l</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

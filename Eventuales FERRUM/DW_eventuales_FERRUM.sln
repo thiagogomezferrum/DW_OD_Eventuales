@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33529.622
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "DW_eventuales_FERRUM", "DW_eventuales\DW_eventuales_FERRUM.dtproj", "{B0B959EF-1AF4-495B-AB4B-501864B2FFC0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0B959EF-1AF4-495B-AB4B-501864B2FFC0}.Development|Default.ActiveCfg = Development
+		{B0B959EF-1AF4-495B-AB4B-501864B2FFC0}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {074CAD91-3865-4419-B67C-E1EAF08859A0}
+	EndGlobalSection
+EndGlobal
