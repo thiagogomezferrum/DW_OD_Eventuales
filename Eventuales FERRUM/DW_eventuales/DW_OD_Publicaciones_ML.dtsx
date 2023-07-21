@@ -12,8 +12,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="227"
-  DTS:VersionGUID="{A64FAF5C-008C-4F74-AA6C-25ADF8D77591}">
+  DTS:VersionBuild="236"
+  DTS:VersionGUID="{2EABE885-8F3D-4785-B56D-0FF1463F9CF3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -83,14 +83,23 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{C0F8FAD0-B45E-47F5-AFF4-773224B6DFC0}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FolderProcesado">
+      <DTS:VariableValue
+        DTS:DataType="8">\\fe-files01\DW_OnDemand\Publicaciones ML\PROCESADOS</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{A4FCAC1F-E31E-407F-9220-B5CF9884204E}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="@[User::SourceFolder] + &quot;\\&quot; + &quot;Procesado_&quot; + (DT_WSTR, 4) YEAR(GETDATE()) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) MONTH(GETDATE()), 2) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) DAY(GETDATE()), 2) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;hour&quot;, GETDATE()), 2) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;minute&quot;, GETDATE()), 2) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;second&quot;, GETDATE()), 2)"
+      DTS:Expression="@[User::FolderProcesado] + &quot;\\&quot; + &quot;Procesado_&quot; + (DT_WSTR, 4) YEAR(GETDATE()) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) MONTH(GETDATE()), 2) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) DAY(GETDATE()), 2) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;hour&quot;, GETDATE()), 2) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;minute&quot;, GETDATE()), 2) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;second&quot;, GETDATE()), 2)"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="NewFolder">
       <DTS:VariableValue
-        DTS:DataType="8">\\fe-files01\DW_OnDemand\Publicaciones ML\Procesado_20230711122659</DTS:VariableValue>
+        DTS:DataType="8">\\fe-files01\DW_OnDemand\Publicaciones ML\PROCESADOS\Procesado_20230721140630</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -136,7 +145,7 @@
           DTS:refId="Package\Carpeta procesado\Create directory"
           DTS:CreationName="Microsoft.FileSystemTask"
           DTS:Description="File System Task"
-          DTS:DTSID="{9ACDF478-4A6C-4229-B43A-55A9E06ACCBF}"
+          DTS:DTSID="{6abd3e9b-34ad-4803-a882-4b5e4c9f3f0c}"
           DTS:ExecutableType="Microsoft.FileSystemTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Create directory"
@@ -165,7 +174,7 @@
           <DTS:ObjectData>
             <FileSystemData
               TaskOperationType="MoveFile"
-              TaskSourcePath="User::FilePath"
+              TaskSourcePath="User::ExcelFilePath"
               TaskIsSourceVariable="True"
               TaskDestinationPath="User::NewFolder"
               TaskIsDestinationVariable="True" />
@@ -176,7 +185,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Carpeta procesado.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{0AB4CF1E-4A0C-4F24-9539-4799314BB15E}"
+          DTS:DTSID="{ADDF7191-91C7-4B23-BE63-1897B1279086}"
           DTS:From="Package\Carpeta procesado\Create directory"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -799,35 +808,14 @@
               ReadOnlyVariables="User::ExcelFilePath,User::FilePath"
               ReadWriteVariables="User::Existe_int">
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_a64b56f928254af0ad0904833c16e8ea")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_a64b56f928254af0ad0904833c16e8ea")]
-[assembly: AssemblyCopyright("Copyright @  2023")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -1209,14 +1197,35 @@ namespace ST_a64b56f928254af0ad0904833c16e8ea.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_a64b56f928254af0ad0904833c16e8ea")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_a64b56f928254af0ad0904833c16e8ea")]
+[assembly: AssemblyCopyright("Copyright @  2023")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -1522,27 +1531,27 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="158.666666666667,42.6666666666667"
-          Id="Package\Carpeta procesado\Create directory"
-          TopLeft="47.5833275777599,19.6166622150937" />
-        <NodeLayout
           Size="121.333333333334,42.6666666666667"
           Id="Package\Carpeta procesado\Move file"
-          TopLeft="69.4583333240208,89.5166652835408" />
+          TopLeft="67.3750000217315,91.6833319114642" />
+        <NodeLayout
+          Size="158.666666666667,42.6666666666667"
+          Id="Package\Carpeta procesado\Create directory"
+          TopLeft="56.0833236165343,9.72221536470772" />
         <EdgeLayout
           Id="Package\Carpeta procesado.PrecedenceConstraints[Constraint]"
-          TopLeft="128.52083045089,62.2833288817604">
+          TopLeft="131.729161819133,52.3888820313744">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,27.2333364017804"
+              EndConnector="0,39.2944498800898"
               Start="0,0"
-              End="0,19.7333364017804">
+              End="0,31.7944498800898">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.7333364017804" />
+                    End="0,31.7944498800898" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1553,15 +1562,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="272,153.333333333334"
-          Size="272,196"
+          IsExpanded="False"
+          PanelSize="272,187.333333333334"
+          Size="272,42.6666666666667"
           Id="Package\Carpeta procesado"
-          TopLeft="468.508922346869,452.514084473948" />
+          TopLeft="596.187491872881,446.942656002144" />
         <NodeLayout
           Size="125.333333333334,42.6666666666667"
           Id="Package\Cleansing"
-          TopLeft="513.759417255521,316.836303548391" />
+          TopLeft="478.937989202972,347.479160143311" />
         <NodeLayout
           Size="152,42.6666666666667"
           Id="Package\Foreach Loop Container 1\Data Flow Task"
@@ -1569,7 +1578,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <NodeLayout
           Size="122.666666666667,42.6666666666667"
           Id="Package\Foreach Loop Container 1\FileExists"
-          TopLeft="230.666662941376,106.783329695364" />
+          TopLeft="230.041662950689,106.783329695364" />
         <NodeLayout
           Size="132,42.6666666666667"
           Id="Package\Foreach Loop Container 1\Script Task"
@@ -1616,9 +1625,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="96.1666656608386,48.200000139475"
+              EndConnector="95.5416656701519,48.200000139475"
               Start="0,0"
-              End="96.1666656608386,40.700000139475">
+              End="95.5416656701519,40.700000139475">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -1629,64 +1638,52 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                     Point2="0,19.6263473621815"
                     Point3="4,19.6263473621815" />
                   <mssgle:LineSegment
-                    End="92.1666656608386,19.6263473621815" />
+                    End="91.5416656701519,19.6263473621815" />
                   <mssgle:CubicBezierSegment
-                    Point1="92.1666656608386,19.6263473621815"
-                    Point2="96.1666656608386,19.6263473621815"
-                    Point3="96.1666656608386,23.6263473621815" />
+                    Point1="91.5416656701519,19.6263473621815"
+                    Point2="95.5416656701519,19.6263473621815"
+                    Point3="95.5416656701519,23.6263473621815" />
                   <mssgle:LineSegment
-                    End="96.1666656608386,40.700000139475" />
+                    End="95.5416656701519,40.700000139475" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="40.0833328304193,24.6263473621815,16,16"
+              BoundingBox="39.770832835076,24.6263473621815,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="54.812499985471334"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="382,206.666666666667"
-          Size="382,261.333333333334"
+          Size="382,54.6666666666667"
           Id="Package\Foreach Loop Container 1"
           TopLeft="46.4062493084926,348.498810751687" />
         <NodeLayout
           Size="164,42.6666666666667"
           Id="Package\Publicacione_hits_old"
-          TopLeft="674.471220118262,328.109919977306" />
+          TopLeft="646.792649102133,354.10991951239" />
         <NodeLayout
           Size="121.333333333334,42.6666666666667"
           Id="Package\Truncate"
-          TopLeft="252.412695555461,222.848408832782" />
+          TopLeft="177.412696673048,234.919837188357" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="313.079362222128,265.515075499449">
+          TopLeft="237.742806324104,277.586503855024">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-75.6731129136351,82.9837352522383"
+              EndConnector="0,70.9123068966634"
               Start="0,0"
-              End="-75.6731129136351,75.4837352522383">
+              End="0,63.4123068966634">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.4918676261191" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,37.4918676261191"
-                    Point2="0,41.4918676261191"
-                    Point3="-4,41.4918676261191" />
-                  <mssgle:LineSegment
-                    End="-71.6731129136351,41.4918676261191" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-71.6731129136351,41.4918676261191"
-                    Point2="-75.6731129136351,41.4918676261191"
-                    Point3="-75.6731129136351,45.4918676261191" />
-                  <mssgle:LineSegment
-                    End="-75.6731129136351,75.4837352522383" />
+                    End="0,63.4123068966634" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1697,66 +1694,42 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="428.406249308493,479.165477418354">
+          TopLeft="428.406249308493,372.322318780832">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="85.3531679470284,-140.995840536629"
+              EndConnector="50.5317398944794,0"
               Start="0,0"
-              End="77.8531679470284,-140.995840536629">
+              End="43.0317398944794,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="38.6765839735142,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="38.6765839735142,0"
-                    Point2="42.6765839735142,0"
-                    Point3="42.6765839735142,-4" />
-                  <mssgle:LineSegment
-                    End="42.6765839735142,-136.995840536629" />
-                  <mssgle:CubicBezierSegment
-                    Point1="42.6765839735142,-136.995840536629"
-                    Point2="42.6765839735142,-140.995840536629"
-                    Point3="46.6765839735142,-140.995840536629" />
-                  <mssgle:LineSegment
-                    End="77.8531679470284,-140.995840536629" />
+                    End="43.0317398944794,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="34.6765839735142,1,16,16"
+              BoundingBox="13.5158699472397,5,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="639.092750588854,338.169636881725">
+          TopLeft="604.271322536305,372.127873161184">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="35.3784695294071,11.2736164289147"
+              EndConnector="42.5213265658278,0"
               Start="0,0"
-              End="27.8784695294071,11.2736164289147">
+              End="35.0213265658278,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="13.6892347647035,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="13.6892347647035,0"
-                    Point2="17.6892347647035,0"
-                    Point3="17.6892347647035,4" />
-                  <mssgle:LineSegment
-                    End="17.6892347647035,7.27361642891469" />
-                  <mssgle:CubicBezierSegment
-                    Point1="17.6892347647035,7.27361642891469"
-                    Point2="17.6892347647035,11.2736164289147"
-                    Point3="21.6892347647035,11.2736164289147" />
-                  <mssgle:LineSegment
-                    End="27.8784695294071,11.2736164289147" />
+                    End="35.0213265658278,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1767,30 +1740,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="756.471220118262,370.776586643973">
+          TopLeft="730.490070487507,396.776586179057">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-151.962297771393,81.7374978299755"
+              EndConnector="0,50.1660698230874"
               Start="0,0"
-              End="-151.962297771393,74.2374978299755">
+              End="0,42.6660698230874">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.8687489149877" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,36.8687489149877"
-                    Point2="0,40.8687489149877"
-                    Point3="-4,40.8687489149877" />
-                  <mssgle:LineSegment
-                    End="-147.962297771393,40.8687489149877" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-147.962297771393,40.8687489149877"
-                    Point2="-151.962297771393,40.8687489149877"
-                    Point3="-151.962297771393,44.8687489149877" />
-                  <mssgle:LineSegment
-                    End="-151.962297771393,74.2374978299755" />
+                    End="0,42.6660698230874" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1806,7 +1767,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     design-time-name="Package\Foreach Loop Container 1\FileExists">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="172,42.6666666666667"
           Id="Package\Foreach Loop Container 1\FileExists\OLE DB Destination"
@@ -1834,9 +1795,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

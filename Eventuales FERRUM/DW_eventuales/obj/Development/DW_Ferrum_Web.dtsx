@@ -12,8 +12,8 @@
   DTS:ObjectName="Package3"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="84"
-  DTS:VersionGUID="{89609F1C-3A48-46D2-8CC4-984A353A2404}">
+  DTS:VersionBuild="85"
+  DTS:VersionGUID="{1C6B4E05-087D-4A0A-8A79-B60CC83DE00B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -9648,34 +9648,34 @@
         <NodeLayout
           Size="153.333333333334,42.6666666666667"
           Id="Package\1-Truncate STA"
-          TopLeft="80.9464279935646,146.457140336633" />
+          TopLeft="45.7901785174335,148.894640293047" />
         <NodeLayout
           Size="232,42.6666666666667"
           Id="Package\5-f_web_catalog_product_flat_1"
-          TopLeft="567.595229828642,247.107144044339" />
+          TopLeft="532.438980352511,249.544644000753" />
         <NodeLayout
           Size="200,42.6666666666667"
           Id="Package\4-f_web_customer_entity"
-          TopLeft="328.904757443283,249.48809821854" />
+          TopLeft="293.748507967152,251.925598174954" />
         <NodeLayout
           Size="200.666666666667,42.6666666666667"
           Id="Package\2-f_web_handel_proyects"
-          TopLeft="318.416662351539,148.559523087243" />
+          TopLeft="283.260412875408,150.997023043657" />
         <NodeLayout
           Size="246.666666666667,42.6666666666667"
           Id="Package\3-f_web_handel_proyects_products"
-          TopLeft="557.58332510665,148.154763025542" />
+          TopLeft="522.427075630519,150.592262981956" />
         <NodeLayout
           Size="232,42.6666666666667"
           Id="Package\6-f_web_handel_store_locations"
-          TopLeft="320.138884118447,347.055552210741" />
+          TopLeft="284.982634642316,349.493052167155" />
         <NodeLayout
           Size="154.666666666667,42.6666666666667"
           Id="Package\7-Insert en Fact"
-          TopLeft="621.15276928929,347.007939699623" />
+          TopLeft="585.996519813159,349.445439656037" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="234.279761326898,168.841665045271">
+          TopLeft="199.123511850767,171.279165001685">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -9697,7 +9697,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="519.083329018206,169.690476389726">
+          TopLeft="483.927079542074,172.12797634614">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -9719,7 +9719,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="682.255944134313,190.821429692209">
+          TopLeft="647.099694658182,193.258929648623">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -9741,7 +9741,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="567.595229828642,269.630954464773">
+          TopLeft="532.438980352511,272.068454421187">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -9763,7 +9763,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="432.521820780865,292.154764885207">
+          TopLeft="397.365571304734,294.592264841621">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -9785,7 +9785,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="552.138884118448,368.365079288515">
+          TopLeft="516.982634642317,370.802579244929">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -9877,7 +9877,7 @@
     design-time-name="Package\4-f_web_customer_entity">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="172,42.6666666666667"
           Id="Package\4-f_web_customer_entity\OLE DB Destination"
@@ -9917,7 +9917,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
