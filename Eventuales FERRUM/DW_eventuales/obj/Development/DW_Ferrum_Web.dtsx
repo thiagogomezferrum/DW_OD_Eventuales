@@ -12,8 +12,8 @@
   DTS:ObjectName="Package3"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="90"
-  DTS:VersionGUID="{F6D1CFB2-C898-4C7B-9F3F-16B67AA3B0AC}">
+  DTS:VersionBuild="92"
+  DTS:VersionGUID="{40587388-BFC7-45AF-9D6E-39B6FF2F766E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -9574,7 +9574,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="7-Insert en Fact"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -9590,12 +9590,12 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Fallo carga sta catalog_product_flat_1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{F9D82601-F1B2-4CEB-A5C5-7DAF93C90C83}"
-          SQLTask:SqlStatementSource="update DW_Procesos_Info&#xA;set estado_Key = 7&#xA;WHERE job_key = 101 fecha_ejecucion = getdate()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="update DW_Procesos_Info&#xA;set estado_Key = 7&#xA;WHERE job_key = 101 and  fecha_ejecucion = getdate()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -9606,12 +9606,12 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Fallo carga sta customer_entity"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{F9D82601-F1B2-4CEB-A5C5-7DAF93C90C83}"
-          SQLTask:SqlStatementSource="update DW_Procesos_Info&#xA;set estado_Key = 7&#xA;WHERE job_key = 101 fecha_ejecucion = getdate()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="update DW_Procesos_Info&#xA;set estado_Key = 7&#xA;WHERE job_key = 101 and  fecha_ejecucion = getdate()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -9627,7 +9627,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{F9D82601-F1B2-4CEB-A5C5-7DAF93C90C83}"
-          SQLTask:SqlStatementSource="update DW_Procesos_Info&#xA;set estado_Key = 7&#xA;WHERE job_key = 101 fecha_ejecucion = getdate()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="update DW_Procesos_Info&#xA;set estado_Key = 7&#xA;WHERE job_key = 101 and fecha_ejecucion = getdate()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -9643,7 +9643,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{F9D82601-F1B2-4CEB-A5C5-7DAF93C90C83}"
-          SQLTask:SqlStatementSource="update DW_Procesos_Info&#xA;set estado_Key = 7&#xA;WHERE job_key = 101 fecha_ejecucion = getdate()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="update DW_Procesos_Info&#xA;set estado_Key = 7&#xA;WHERE job_key = 101 and fecha_ejecucion = getdate()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -9654,12 +9654,12 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Fallo carga sta handel_store_locations"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{F9D82601-F1B2-4CEB-A5C5-7DAF93C90C83}"
-          SQLTask:SqlStatementSource="update DW_Procesos_Info&#xA;set estado_Key = 7&#xA;WHERE job_key = 101 fecha_ejecucion = getdate()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="update DW_Procesos_Info&#xA;set estado_Key = 7&#xA;WHERE job_key = 101 and fecha_ejecucion = getdate()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -9670,12 +9670,12 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Fallo SP"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{F9D82601-F1B2-4CEB-A5C5-7DAF93C90C83}"
-          SQLTask:SqlStatementSource="update DW_Procesos_Info&#xA;set estado_Key = 5&#xA;WHERE job_key = 101 fecha_ejecucion = getdate()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="update DW_Procesos_Info&#xA;set estado_Key = 5&#xA;WHERE job_key = 101 and fecha_ejecucion = getdate()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -9686,12 +9686,12 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Finalizo OK"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="5">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{F9D82601-F1B2-4CEB-A5C5-7DAF93C90C83}"
-          SQLTask:SqlStatementSource="update DW_Procesos_Info&#xA;set estado_Key = 2&#xA;WHERE job_key = 101 fecha_ejecucion = getdate()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="update DW_Procesos_Info&#xA;set estado_Key = 2&#xA;WHERE job_key = 101 and fecha_ejecucion = getdate()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -9847,6 +9847,34 @@
           Size="154.666666666667,42.6666666666667"
           Id="Package\7-Insert en Fact"
           TopLeft="234.121525056505,522.595438598353" />
+        <NodeLayout
+          Size="258.666666666667,42.6666666666667"
+          Id="Package\Fallo carga sta catalog_product_flat_1"
+          TopLeft="476.177076319698,277.512111483274" />
+        <NodeLayout
+          Size="226.666666666667,42.6666666666667"
+          Id="Package\Fallo carga sta customer_entity"
+          TopLeft="476.802076310385,358.762110030411" />
+        <NodeLayout
+          Size="228,42.6666666666667"
+          Id="Package\Fallo carga sta handel_proyects"
+          TopLeft="458.677076580468,123.462114237902" />
+        <NodeLayout
+          Size="274.666666666667,42.6666666666667"
+          Id="Package\Fallo carga sta handel_proyects_products"
+          TopLeft="474.927076338324,196.262112936137" />
+        <NodeLayout
+          Size="258.666666666667,42.6666666666667"
+          Id="Package\Fallo carga sta handel_store_locations"
+          TopLeft="485.177076245192,434.162108682154" />
+        <NodeLayout
+          Size="116,42.6666666666667"
+          Id="Package\Fallo SP"
+          TopLeft="449.26041034221,523.862107078193" />
+        <NodeLayout
+          Size="132,42.6666666666667"
+          Id="Package\Finalizo OK"
+          TopLeft="252.427079653833,618.728773884334" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="299.587795002585,60.9113092959177">
@@ -9883,6 +9911,76 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,21.5785719814898" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 10]"
+          TopLeft="433.857635880975,454.760913014122">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="51.319440364217,0"
+              Start="0,0"
+              End="43.819440364217,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="43.819440364217,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="6.66837252585849,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 11]"
+          TopLeft="388.788191723172,544.562106171606">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="60.4722186190381,0"
+              Start="0,0"
+              End="52.9722186190381,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="52.9722186190381,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="11.244761653269,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 12]"
+          TopLeft="314.940969021836,565.262105265019">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.4666686193146"
+              Start="0,0"
+              End="0,45.9666686193146">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.9666686193146" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9979,10 +10077,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="228,42.6666666666667"
-          Id="Package\Fallo carga sta handel_proyects"
-          TopLeft="458.677076580468,123.462114237902" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
           TopLeft="396.427080845926,144.587902224006">
@@ -10007,10 +10101,6 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="274.666666666667,42.6666666666667"
-          Id="Package\Fallo carga sta handel_proyects_products"
-          TopLeft="474.927076338324,196.262112936137" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
           TopLeft="423.4687474474,216.860520897201">
@@ -10035,10 +10125,6 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="258.666666666667,42.6666666666667"
-          Id="Package\Fallo carga sta catalog_product_flat_1"
-          TopLeft="476.177076319698,277.512111483274" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
           TopLeft="419.438985493412,297.211710854512">
@@ -10063,10 +10149,6 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="226.666666666667,42.6666666666667"
-          Id="Package\Fallo carga sta customer_entity"
-          TopLeft="476.802076310385,358.762110030411" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
           TopLeft="411.248509196498,378.027186517806">
@@ -10091,88 +10173,6 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="258.666666666667,42.6666666666667"
-          Id="Package\Fallo carga sta handel_store_locations"
-          TopLeft="485.177076245192,434.162108682154" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="433.857635880975,454.760913014122">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="51.319440364217,0"
-              Start="0,0"
-              End="43.819440364217,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="43.819440364217,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="6.66837252585849,5,30.4826953125,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="116,42.6666666666667"
-          Id="Package\Fallo SP"
-          TopLeft="449.26041034221,523.862107078193" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 11]"
-          TopLeft="388.788191723172,544.562106171606">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="60.4722186190381,0"
-              Start="0,0"
-              End="52.9722186190381,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="52.9722186190381,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="11.244761653269,5,30.4826953125,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="132,42.6666666666667"
-          Id="Package\Finalizo OK"
-          TopLeft="252.427079653833,618.728773884334" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 12]"
-          TopLeft="314.940969021836,565.262105265019">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,53.4666686193146"
-              Start="0,0"
-              End="0,45.9666686193146">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,45.9666686193146" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -10180,7 +10180,7 @@
     design-time-name="Package\2-f_web_handel_proyects">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="172,42.6666666666667"
           Id="Package\2-f_web_handel_proyects\OLE DB Destination"
@@ -10208,7 +10208,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10426,7 +10428,7 @@
     design-time-name="Package\6-f_web_handel_store_locations">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="172,42.6666666666667"
           Id="Package\6-f_web_handel_store_locations\OLE DB Destination"
@@ -10454,7 +10456,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
