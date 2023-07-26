@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">MYSPOT05</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1" SSIS:Salt="ZggMiOcnssg=" SSIS:IV="83YqbO2N87tyJNQCjmhUKQ==" SSIS:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc">JKQseZ2MBpbO406z417GOwgmrivnMhnSF77D7CylhJYJsO2l55xCZbNpVRmB++FOb4PX8yZ24fj3gV7RtHcnkfgvY72z4gRg0ZIA60SaL3UaELXqVO/9RGf0I1VYyxwaYwcENVWt2UHhIS6PjXn9AcvZephbvs9azruVJydM8FISUwp30NmcdQMKq3PiQp5s</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1" SSIS:Salt="kh83J8TbjcU=" SSIS:IV="8CYGxzW4OIIsYVUgcyoKKg==" SSIS:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc">vhKMJHYkOmKX2+v/vE80XJq6HuKSvh5jGUExWltZQxheF/G87r7hESQdX1Tyt0dJUY2MAlLP+TCRxjRnrQAbyUOQn2K4zEjF5GVZPVLKLpwlL59sENnsh5L4BWrCWcY7iQXv0ShTG1bX914FA/aQLGkImJw/q/UpLDt2A64nszXpyzKP2ktnuvTXoz926+HZ</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -35,7 +35,7 @@
           <SSIS:Package SSIS:Name="DW_Desvios_Masivos.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="DW_Clasificación_Roturas.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="DW_Ferrum_Web.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="Package1.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="DW_Lotes_Info.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="SQLServer-ferrumdba.DWFE.pbi_ferrum.conmgr" />
@@ -349,10 +349,10 @@
                 <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">237</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">252</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{41B72075-10E4-4161-9D5B-8C57B90E57F5}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{2D86F4BA-F1ED-4CD8-81D3-146509FD1C73}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -2256,16 +2256,16 @@
                 </SSIS:Parameter>
               </SSIS:Parameters>
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="Package1.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="DW_Lotes_Info.dtsx">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">{8DA31FDF-250F-4738-8BE3-F172A515DEEA}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">2</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">3</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{5A996E52-587E-442A-ACEC-C47FA196B9FE}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{0E630D34-311B-4789-9E09-BEC11133BBB0}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -2298,7 +2298,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\thiag\OneDrive - F.V.S.A\Ferrum\dw_lotes_info.xlsx;Extended Properties="Excel 12.0 XML;HDR=YES";</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\thiag\OneDrive - F.V.S.A\Ferrum\dw_lotes_info.xlsx;Extended Properties="EXCEL 12.0 XML;HDR=YES";</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>

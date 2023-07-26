@@ -8,6 +8,7 @@
         <UseWinAuth>false</UseWinAuth>
         <WinAuthUserName />
         <WinAuthDomain />
+        <Run64BitRuntime>false</Run64BitRuntime>
         <UserIDs>
           <ConfigurationSetting>
             <Id>{B1B7296E-ABD8-452E-B771-C463BA8095C5}</Id>
