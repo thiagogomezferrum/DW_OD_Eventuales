@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">MYSPOT05</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1" SSIS:Salt="nGRj+McAUY8=" SSIS:IV="DjGBsDkhb1gLPbaR63YJ1w==" SSIS:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc">tJKTpKXZk2gQLFIFoHgQOmvIjElrKZE4uXFpwpbhXZRajjpptIUsg4vg9cdtXGyK/g2bC3sFBTkuiURFtVsW472X1oEN3Vcmn3WoZhdNCyLbKm8LD3Kz8SzXetTlcExhO2QSQJnx0qKYZxueAF7XFbAAW6gb97U3p5Y9KmPtOam9jbh5qlkZe5jB+wwrvJ4Y</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1" SSIS:Salt="UNGMm2pSSls=" SSIS:IV="adXaHuBaL+lKJlH0OXtqgg==" SSIS:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc">U35YXmKpivqPeRVn7txBEtJquGJjOAmPpqmDlpn3+3FeUcY7XfTBJJcv+CzZ4lSf7pmk123GOkJ170sZrl74Nc5DpPlGHlkQ7vpmyke9nftu5INxM1hSgsHSpGSyg0Oi9I2oVws0etkF7TzdpPLzU3JNEWUHgLPIn3MxA6d6QDaWF88u65njZXdEWl2l73bq</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -35,7 +35,7 @@
           <SSIS:Package SSIS:Name="DW_Desvios_Masivos.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="DW_Clasificación_Roturas.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="DW_Ferrum_Web.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="Package1.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="DW_Lotes_Info.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="SQLServer-ferrumdba.DWFE.pbi_ferrum.conmgr" />
@@ -349,10 +349,10 @@
                 <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">249</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">253</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{60108D17-3623-4669-92DD-65331F0220BF}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{0EA4959E-A703-452B-90AB-09DE2F743AB6}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -2256,16 +2256,16 @@
                 </SSIS:Parameter>
               </SSIS:Parameters>
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="Package1.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="DW_Lotes_Info.dtsx">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">{8DA31FDF-250F-4738-8BE3-F172A515DEEA}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">2</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">3</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{5A996E52-587E-442A-ACEC-C47FA196B9FE}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{0E630D34-311B-4789-9E09-BEC11133BBB0}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

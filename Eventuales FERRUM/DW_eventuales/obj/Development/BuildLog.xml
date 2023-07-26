@@ -2,53 +2,53 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>DW_eventuales_FERRUM</Name>
-    <LastWriteTime>2023-07-25T17:15:07.8987138Z</LastWriteTime>
+    <LastWriteTime>2023-07-26T12:46:18.5849427Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithPassword</LastKnownProtectionLevel>
-    <Salt>UHMWvHon</Salt>
-    <LastKnownProtectedHashedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIqXjDgVII0KJV7pusLWjVQAAAAACAAAAAAAQZgAAAAEAACAAAAB3MrcWIsETht9o3PwWYSsYWyomj3mHAJxP9BGYESA34wAAAAAOgAAAAAIAACAAAAC/uS/d9hBujwKoymkQYH4dH5cnWtF83fneYzYdb4triTAAAAByZu+ltUeHzNWuT1KvK2TysU70iMHFpdvePNACTBVxNyRlMlYDnDj2xyyHFhF/n/ZAAAAAIlUyisEAFiIEhUY+tux/OatfO4+V8oyk1cD8TVOmLDiZn/OUdC/CtPWMyH/Jxty6MvOF5EYvEKVlbbCir92BCA==</LastKnownProtectedHashedPassword>
+    <Salt>XTsXvBAw</Salt>
+    <LastKnownProtectedHashedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIqXjDgVII0KJV7pusLWjVQAAAAACAAAAAAAQZgAAAAEAACAAAADgtw9SGY0pEnuhZ3Vjm1Z6tOeJ8Lxpn4JEytYsgSyoFAAAAAAOgAAAAAIAACAAAABmzKgIxQYwXACUoPSRYH7lBuNCuHuvOWIoDto8c7p60zAAAACOqVm3r9jQtaVbXvJAn6faVsL6WrFgCMbUBjquKwEwx0+T4azilXr+sX2u596qhL9AAAAAZbloS9CRH8W8AUig24U1kV0RyZr1tvp4cOzCUpPO5lkAC24ckSxi0gCJDVpCRvBP2ZwYQPvAbueG5ifs+c0DsQ==</LastKnownProtectedHashedPassword>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>DW_OD_Publicaciones_ML.dtsx</Name>
-      <LastWriteTime>2023-07-25T18:14:06.769034Z</LastWriteTime>
+      <LastWriteTime>2023-07-26T13:27:28.182184Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithPassword</LastKnownProtectionLevel>
-      <Salt>6wFPSXYS</Salt>
-      <LastKnownProtectedHashedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIqXjDgVII0KJV7pusLWjVQAAAAACAAAAAAAQZgAAAAEAACAAAADJlclaOFItZZw2pmz1De/mh3BE9df/aFCGIF496/SENwAAAAAOgAAAAAIAACAAAAAHi67ifU43s3XjukSp24rCIul8MDGG7/b3IjDFnle1wTAAAADT3FTH4KnEeErZNaV/KgMRRFDN86r653HP0EygLJp5Yhe2c32CHnuvTy1nCwK1im1AAAAAiLxizXgsNjFNAtADXephpC4wdR0lIjaQhnOnrN8a9Bf03tFjEnr7Od8r64qcK5TZE5IsNsy9ztQav2VPIl29tA==</LastKnownProtectedHashedPassword>
+      <Salt>ZVReCVv4</Salt>
+      <LastKnownProtectedHashedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIqXjDgVII0KJV7pusLWjVQAAAAACAAAAAAAQZgAAAAEAACAAAABsZVcgCxlJGDL6b4SmR92Ays5DrAlNAwK0RCJM9o0hVgAAAAAOgAAAAAIAACAAAABqA8b9rlc59aLvebNSEqBbEVEmTzw9AVKiQe86ftVzJDAAAADo5PKKXVgqBTUPV0xsnvMBf4cOLEVVu7NT13h9jNEkYHDJca1zTzftbhQkFFnCg99AAAAA6rPdIRII7JBWgzw2FmTFHnDhqS3U6mpWzzftPh6DPzmdtG6k/uzgnkZBGnBpK238PH9etHA3ptVEXqbx/mNYVg==</LastKnownProtectedHashedPassword>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DW_OD_Importaciones.dtsx</Name>
       <LastWriteTime>2023-07-18T17:32:01.7185223Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithPassword</LastKnownProtectionLevel>
       <Salt>E2tBmY1y</Salt>
-      <LastKnownProtectedHashedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIqXjDgVII0KJV7pusLWjVQAAAAACAAAAAAAQZgAAAAEAACAAAAB4fPHqV2DktK2FV1qv4nAilp3dNolyIFi7PZxxHfqCngAAAAAOgAAAAAIAACAAAADtVsOD5BfZlFGjWdNZfDEXIOV4KlmTzNu6DUAzbwwwPjAAAAB6gsdaFvDrdxqKgx0ExckVoeqjJ+NngMitI/X5uV90+FOSZAr08YLgVcNFh5r4jahAAAAAqYNMek6I970XxlbCbfbzvxIbaEzGptVgRmmKLebv4cvF2UwuovnqUWigNVnCbMZqrHRH1ntpFmYCTH1GEwy9WQ==</LastKnownProtectedHashedPassword>
+      <LastKnownProtectedHashedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIqXjDgVII0KJV7pusLWjVQAAAAACAAAAAAAQZgAAAAEAACAAAAB4KFMR342upSMqKPvBHZ/pBta1knX1KC3oOHQXyTZPZQAAAAAOgAAAAAIAACAAAAA4PZ9j+5SkLKXxn4pGmk2kTJQp3+zy6TMrZvlquTSzIzAAAABJiEu3S8x6nnIaal0WE1qyICMmQ1iN4wq6S4HGXNvVePfAp1dWkSW+IZQue4rIxfVAAAAAjlYp/imRXgG4Gwc3ViTyOphXWQWovVUwo6ihbdtRTtXAWKxrdrtJa1fWLLYBDhXWaystMv5ak5JEm3lCp6WxFA==</LastKnownProtectedHashedPassword>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DW_Desvios_Masivos.dtsx</Name>
       <LastWriteTime>2023-07-11T15:25:09.8166165Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithPassword</LastKnownProtectionLevel>
       <Salt>QIx7dnPl</Salt>
-      <LastKnownProtectedHashedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIqXjDgVII0KJV7pusLWjVQAAAAACAAAAAAAQZgAAAAEAACAAAAA2Np0vwUf4NMxhPxnDSC1E/YsZAKhi8DThKIUMBC3q0AAAAAAOgAAAAAIAACAAAADbe7U2YsyOCrz69wB3/8IsVfSVZuoR7Qrq3xn3ychM1zAAAADtrHZS8ejiETeI0YhRBL9JOvVsWP31ngea1E2PB7W5uerYGpToZxgFAiGLsOjmRjhAAAAAUfLl4ohsUDaXdkLjD/Zen2L3EwPBfdvpUAzAs5cZ3q2d9B+bPFvt4DH70wo1Q5Y6Ol2h+JYQmIm6wIHJRGxXlA==</LastKnownProtectedHashedPassword>
+      <LastKnownProtectedHashedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIqXjDgVII0KJV7pusLWjVQAAAAACAAAAAAAQZgAAAAEAACAAAAD4Y98pU4qzTTyAxiTqvYyaUuSc7gLIVoQ1iZCxpkgjlgAAAAAOgAAAAAIAACAAAACqWm9riVokrmzT9GQgggiJdc0gQlGU4g1zCMWwGYPzLjAAAADZBTr8Q9PNbIx9HQMzlLrLK1v8P3ucUojBHwf0+QosQml5sIPzFC/N7eTwkwg3yZtAAAAA/f6nFNGzmoWc8rlfNIxfavj0XiLmnNgiiKgtrJaXGOD9cFESeWnDvZW7fBAYQCeZmp9IBOrOJek5ZUu5x49pyg==</LastKnownProtectedHashedPassword>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DW_Clasificación_Roturas.dtsx</Name>
       <LastWriteTime>2023-07-11T15:27:14.508266Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithPassword</LastKnownProtectionLevel>
       <Salt>HZnjz9CK</Salt>
-      <LastKnownProtectedHashedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIqXjDgVII0KJV7pusLWjVQAAAAACAAAAAAAQZgAAAAEAACAAAAD1wIRo+og1ZYihRG/nBObfgH34dtcsXmXWcY22EWzF9gAAAAAOgAAAAAIAACAAAAAaIKJFrtaJEYQVbBJY4LUXaon1L1DFjEH8nMnMbfu3/jAAAACXYcVNyKJwnJL2X82NlIVRXMAIaCFxG4zvUMymrmOmjw+xMn3zWC18Te9CXdvWtfJAAAAArm1TR+TqjSFFHW6gwZ0F8mmXAmK4Uolf7kYUdLkn+hO2TMEl48z4Usq1xxJVZ3MLrHRj6uRRWA98y4Gb8RiF9w==</LastKnownProtectedHashedPassword>
+      <LastKnownProtectedHashedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIqXjDgVII0KJV7pusLWjVQAAAAACAAAAAAAQZgAAAAEAACAAAAC2xsPO8wplSbuFbgDcADXmbiedtBK59qbhE/LJClKMFAAAAAAOgAAAAAIAACAAAAC7DBX9KzUV2MlwpVUfwWkPmGqZf/bqRlXu8m+Jgh0oUjAAAADn1IHYvSjPpoLuI4/gizULfQOuGX/o4vT2NAWgR/zoj8grZYuMd6L+f5PFlnZmviBAAAAAi2ug6SqEQO/Xr5U2sh4lo60PVvUVXXMvZL8bOoiDoqaboRwwkloyTS2tvP6/vGeL1Y19G8zHYCAzN73DT6rf+g==</LastKnownProtectedHashedPassword>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DW_Ferrum_Web.dtsx</Name>
       <LastWriteTime>2023-07-21T14:37:41.1469829Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithPassword</LastKnownProtectionLevel>
       <Salt>m8a1UWIm</Salt>
-      <LastKnownProtectedHashedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIqXjDgVII0KJV7pusLWjVQAAAAACAAAAAAAQZgAAAAEAACAAAAAwItQwN94ETHix67o9ES7giGczZbJ8pzHDmQXPZmTedgAAAAAOgAAAAAIAACAAAADEq1VGCJRv0DiXAvcC/GQ4HN79cwbmhUt/9QUnyOdQEjAAAABV8pjpxcI5ru/GACzuR5fuTI41JfVTe2wOlsl31VSxATd2CwRa0oNzgs7sYngdCh5AAAAAVnXtvpfrCkx2sGGg/JSsF2n8KYFGNhGilHX5XPz51oqsVzzrjXhiV9kpJKMnVDOwNp5mroeQJbDsqzKxQCcKLQ==</LastKnownProtectedHashedPassword>
+      <LastKnownProtectedHashedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIqXjDgVII0KJV7pusLWjVQAAAAACAAAAAAAQZgAAAAEAACAAAAA7MYfw0i3OgzJSgFdSyrZq66veVHjmgSRS/d/ylmf+aAAAAAAOgAAAAAIAACAAAAAaIHawnLcDsV63O71asIfmty8SKWfVVrUWRSubuzaglDAAAACFkT2kBqqcGtxXaMvKu8O/kiELMepBD6kxrZdB5EmK1i1A67MJhQuYVWRtPwnffb1AAAAAgOGpCArs5YColloT2nDlz1GcMcXPp/2BcV2/0jMbIljEmFNBDcPo9yB/IijaRI8yFvCrogpCYhMXsodYHOamTQ==</LastKnownProtectedHashedPassword>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>Package1.dtsx</Name>
-      <LastWriteTime>2023-07-25T17:15:07.8181806Z</LastWriteTime>
+      <Name>DW_Lotes_Info.dtsx</Name>
+      <LastWriteTime>2023-07-26T12:25:32.9543927Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithPassword</LastKnownProtectionLevel>
-      <Salt>e+cOUSKR</Salt>
-      <LastKnownProtectedHashedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIqXjDgVII0KJV7pusLWjVQAAAAACAAAAAAAQZgAAAAEAACAAAABo4S6MEbBgJBgKXjW6nOJav17Fa30uGsyqN13xBF+OqAAAAAAOgAAAAAIAACAAAADcKTQyI6PIc4izyTVt9ThmaEOqh8LKcFgq9tYDaXNk6jAAAACZ4y6fUhLrrKBuXs3rU1/uz3GAEhW20ABb0eqIETKt7Del77a90ALJLiow4J+tzeVAAAAAXPBfBHKP7A5oyYOmaQqU3gfHhq7NbeyflEPXCCxjbLsAi6yWIqXKsbjbA3nhxb+TvwzaPzQ/MlBGEcn28xhtXg==</LastKnownProtectedHashedPassword>
+      <Salt>JFIj0Tux</Salt>
+      <LastKnownProtectedHashedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIqXjDgVII0KJV7pusLWjVQAAAAACAAAAAAAQZgAAAAEAACAAAADDqd3E6aibS8myf+hqdLPvkJ0K/70tlXhYkdtzTFtjQQAAAAAOgAAAAAIAACAAAAAZ7nrFrNj6ApHEhDZYNuJ0gG5k9XcRhNYVSDt8H+DUzzAAAACh0IT0edcxLNSofbOgTVkN3sQ3E+HrT8W0I8iHwTRnx+QylBLjDJBL92oKYRr1HPRAAAAAr7CvEjmLzqwiV/FPoBq2xqY0AQZriyKiVdH1TINFrV/KT13ka71Btqug9bU29ehCdPsACuuRaX7gl1Nri7HMSw==</LastKnownProtectedHashedPassword>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
 </BuildLog>
