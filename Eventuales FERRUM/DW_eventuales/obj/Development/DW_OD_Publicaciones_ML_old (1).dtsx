@@ -12,8 +12,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="229"
-  DTS:VersionGUID="{A9D594ED-71D9-404A-887D-69C6B56C3A8B}">
+  DTS:VersionBuild="235"
+  DTS:VersionGUID="{4C8DF348-8020-4DFF-8AC4-E52EE247933F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -90,7 +90,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="NewFolder">
       <DTS:VariableValue
-        DTS:DataType="8">\\fe-files01\DW_OnDemand\Publicaciones ML\Procesado_20230726124819</DTS:VariableValue>
+        DTS:DataType="8">\\fe-files01\DW_OnDemand\Publicaciones ML\Procesado_20230726134531</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -211,630 +211,600 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Foreach Loop Container 1"
-      DTS:CreationName="STOCK:FOREACHLOOP"
-      DTS:Description="Foreach Loop Container"
-      DTS:DTSID="{5044D5F6-34CD-4DE3-838F-E531E5405677}"
-      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:refId="Package\FileExists"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{178A0D08-9716-4924-9585-040EE4AC4884}"
+      DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Foreach Loop Container 1">
-      <DTS:ForEachEnumerator
-        DTS:CreationName="Microsoft.ForEachFileEnumerator"
-        DTS:DTSID="{9D520209-1F03-4C7E-A725-19B5602DEF07}"
-        DTS:ObjectName="{9D520209-1F03-4C7E-A725-19B5602DEF07}">
-        <DTS:PropertyExpression
-          DTS:Name="Directory">@[User::SourceFolder]</DTS:PropertyExpression>
-        <DTS:ObjectData>
-          <ForEachFileEnumeratorProperties>
-            <FEFEProperty
-              Folder="\\fe-files01\DW_OnDemand\Publicaciones ML" />
-            <FEFEProperty
-              FileSpec="*.xlsx" />
-            <FEFEProperty
-              FileNameRetrievalType="1" />
-            <FEFEProperty
-              Recurse="0" />
-          </ForEachFileEnumeratorProperties>
-        </DTS:ObjectData>
-      </DTS:ForEachEnumerator>
+      DTS:ObjectName="FileExists"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
-      <DTS:Executables>
-        <DTS:Executable
-          DTS:refId="Package\Foreach Loop Container 1\Data Flow Task"
-          DTS:CreationName="Microsoft.Pipeline"
-          DTS:Description="Data Flow Task"
-          DTS:DTSID="{C566E462-5E28-4E29-8730-1A944C9F45E4}"
-          DTS:ExecutableType="Microsoft.Pipeline"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Data Flow Task"
-          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <pipeline
-              version="1" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Foreach Loop Container 1\FileExists"
-          DTS:CreationName="Microsoft.Pipeline"
-          DTS:DelayValidation="True"
-          DTS:Description="Data Flow Task"
-          DTS:DTSID="{178A0D08-9716-4924-9585-040EE4AC4884}"
-          DTS:ExecutableType="Microsoft.Pipeline"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="FileExists"
-          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <pipeline
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\FileExists\Excel Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel Source"
+              usesDispositions="true"
               version="1">
-              <components>
-                <component
-                  refId="Package\Foreach Loop Container 1\FileExists\Excel Source"
-                  componentClassID="Microsoft.ExcelSource"
-                  contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-                  description="Excel Source"
-                  name="Excel Source"
-                  usesDispositions="true"
-                  version="1">
-                  <properties>
-                    <property
-                      dataType="System.Int32"
-                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                      name="CommandTimeout">0</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">'REAL TRENDS$'</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the variable that contains the name of the database object used to open a rowset."
-                      name="OpenRowsetVariable"></property>
-                    <property
-                      dataType="System.String"
-                      description="The SQL command to be executed."
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT * FROM OPENROWSET(BULK 'C:\Users\thiag\OneDrive - F.V.S.A\Ferrum\ETLs\MeLi\PublicacionesML') AS Data</property>
-                    <property
-                      dataType="System.String"
-                      description="The variable that contains the SQL command to be executed."
-                      name="SqlCommandVariable">User::SourceFolder</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the mode used to access the database."
-                      name="AccessMode"
-                      typeConverter="AccessMode">0</property>
-                    <property
-                      dataType="System.String"
-                      description="The mapping from parameters in the SQL command to variables."
-                      name="ParameterMapping"></property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
-                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
-                      description="The OLE DB runtime connection used to access the database."
-                      name="OleDbConnection" />
-                  </connections>
-                  <outputs>
-                    <output
-                      refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output]"
-                      name="Excel Source Output">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Distribuidor]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Distribuidor]"
-                          length="255"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Distribuidor]"
-                          name="Distribuidor"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Fecha]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Fecha]"
-                          length="255"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Fecha]"
-                          name="Fecha"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Tienda oficial]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Tienda oficial]"
-                          length="255"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Tienda oficial]"
-                          name="Tienda oficial"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Nro# publicación]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Nro# publicación]"
-                          length="255"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Nro# publicación]"
-                          name="Nro# publicación"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Título]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Título]"
-                          length="255"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Título]"
-                          name="Título"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Tipo de publicación]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Tipo de publicación]"
-                          length="255"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Tipo de publicación]"
-                          name="Tipo de publicación"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Unidades vendidas]"
-                          dataType="r8"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Unidades vendidas]"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Unidades vendidas]"
-                          name="Unidades vendidas"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Precio por unidad]"
-                          dataType="cy"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Precio por unidad]"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Precio por unidad]"
-                          name="Precio por unidad"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Total]"
-                          dataType="cy"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Total]"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Total]"
-                          name="Total"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].Columns[F10]"
-                          dataType="cy"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[F10]"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].Columns[F10]"
-                          name="F10"
-                          truncationRowDisposition="FailComponent" />
-                      </outputColumns>
-                      <externalMetadataColumns
-                        isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Distribuidor]"
-                          dataType="wstr"
-                          length="255"
-                          name="Distribuidor" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Fecha]"
-                          dataType="wstr"
-                          length="255"
-                          name="Fecha" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Tienda oficial]"
-                          dataType="wstr"
-                          length="255"
-                          name="Tienda oficial" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Nro# publicación]"
-                          dataType="wstr"
-                          length="255"
-                          name="Nro# publicación" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Título]"
-                          dataType="wstr"
-                          length="255"
-                          name="Título" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Tipo de publicación]"
-                          dataType="wstr"
-                          length="255"
-                          name="Tipo de publicación" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Unidades vendidas]"
-                          dataType="r8"
-                          name="Unidades vendidas" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Precio por unidad]"
-                          dataType="cy"
-                          name="Precio por unidad" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Total]"
-                          dataType="cy"
-                          name="Total" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[F10]"
-                          dataType="cy"
-                          name="F10" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[F11]"
-                          dataType="wstr"
-                          length="255"
-                          name="F11" />
-                      </externalMetadataColumns>
-                    </output>
-                    <output
-                      refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Error Output]"
-                      isErrorOut="true"
-                      name="Excel Source Error Output">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Distribuidor]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Distribuidor]"
-                          name="Distribuidor" />
-                        <outputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Fecha]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Fecha]"
-                          name="Fecha" />
-                        <outputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Tienda oficial]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Tienda oficial]"
-                          name="Tienda oficial" />
-                        <outputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Nro# publicación]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Nro# publicación]"
-                          name="Nro# publicación" />
-                        <outputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Título]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Título]"
-                          name="Título" />
-                        <outputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Tipo de publicación]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Tipo de publicación]"
-                          name="Tipo de publicación" />
-                        <outputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Unidades vendidas]"
-                          dataType="r8"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Unidades vendidas]"
-                          name="Unidades vendidas" />
-                        <outputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Precio por unidad]"
-                          dataType="cy"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Precio por unidad]"
-                          name="Precio por unidad" />
-                        <outputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Total]"
-                          dataType="cy"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Total]"
-                          name="Total" />
-                        <outputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[F10]"
-                          dataType="cy"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[F10]"
-                          name="F10" />
-                        <outputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
-                  refId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination"
-                  componentClassID="Microsoft.OLEDBDestination"
-                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-                  description="OLE DB Destination"
-                  name="OLE DB Destination"
-                  usesDispositions="true"
-                  version="4">
-                  <properties>
-                    <property
-                      dataType="System.Int32"
-                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                      name="CommandTimeout">0</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[publicaciones_internet]</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the variable that contains the name of the database object used to open a rowset."
-                      name="OpenRowsetVariable"></property>
-                    <property
-                      dataType="System.String"
-                      description="The SQL command to be executed."
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source."
-                      name="DefaultCodePage">1252</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Forces the use of the DefaultCodePage property value when describing character data."
-                      name="AlwaysUseDefaultCodePage">false</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the mode used to access the database."
-                      name="AccessMode"
-                      typeConverter="AccessMode">3</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                      name="FastLoadKeepIdentity">false</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                      name="FastLoadKeepNulls">false</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                      name="FastLoadMaxInsertCommitSize">2147483647</property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Connections[OleDbConnection]"
-                      connectionManagerID="{3E711310-CF6C-4A7C-BFBE-087E31A2632F}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[SQLServer-ferrumdba.STA.pbi_ferrum]"
-                      description="The OLE DB runtime connection used to access the database."
-                      name="OleDbConnection" />
-                  </connections>
-                  <inputs>
-                    <input
-                      refId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input]"
-                      errorOrTruncationOperation="Insert"
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">'REAL TRENDS$'</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT * FROM OPENROWSET(BULK 'C:\Users\thiag\OneDrive - F.V.S.A\Ferrum\ETLs\MeLi\PublicacionesML') AS Data</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable">User::SourceFolder</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\FileExists\Excel Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\FileExists\Excel Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Distribuidor]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      hasSideEffects="true"
-                      name="OLE DB Destination Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Distribuidor]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Distribuidor"
-                          externalMetadataColumnId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[distribuidor]"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Distribuidor]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Total]"
-                          cachedDataType="cy"
-                          cachedName="Total"
-                          externalMetadataColumnId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[total]"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Total]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Fecha]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Fecha"
-                          externalMetadataColumnId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fecha_publicacion]"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Fecha]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tienda oficial]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Tienda oficial"
-                          externalMetadataColumnId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tienda_oficial]"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Tienda oficial]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Nro# publicación]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Nro# publicación"
-                          externalMetadataColumnId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nro_publicacion]"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Nro# publicación]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Título]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Título"
-                          externalMetadataColumnId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[titulo]"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Título]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tipo de publicación]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Tipo de publicación"
-                          externalMetadataColumnId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[destaque]"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Tipo de publicación]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Unidades vendidas]"
-                          cachedDataType="r8"
-                          cachedName="Unidades vendidas"
-                          externalMetadataColumnId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[unidades_vendidas]"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Unidades vendidas]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Precio por unidad]"
-                          cachedDataType="cy"
-                          cachedName="Precio por unidad"
-                          externalMetadataColumnId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[precio_por_unidad]"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Precio por unidad]" />
-                      </inputColumns>
-                      <externalMetadataColumns
-                        isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[row_id]"
-                          dataType="i4"
-                          name="row_id" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[distribuidor]"
-                          dataType="wstr"
-                          length="100"
-                          name="distribuidor" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fecha_publicacion]"
-                          dataType="wstr"
-                          length="50"
-                          name="fecha_publicacion" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tienda_oficial]"
-                          dataType="wstr"
-                          length="100"
-                          name="tienda_oficial" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nro_publicacion]"
-                          dataType="wstr"
-                          length="50"
-                          name="nro_publicacion" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[titulo]"
-                          dataType="wstr"
-                          length="255"
-                          name="titulo" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[destaque]"
-                          dataType="wstr"
-                          length="50"
-                          name="destaque" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[unidades_vendidas]"
-                          dataType="wstr"
-                          length="50"
-                          name="unidades_vendidas" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[precio_por_unidad]"
-                          dataType="wstr"
-                          length="50"
-                          name="precio_por_unidad" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[total]"
-                          dataType="wstr"
-                          length="50"
-                          name="total" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fecha]"
-                          dataType="dbTimeStamp"
-                          name="fecha" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[identificador]"
-                          dataType="wstr"
-                          length="100"
-                          name="identificador" />
-                      </externalMetadataColumns>
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="OLE DB Destination Error Output"
-                      synchronousInputId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-              </components>
-              <paths>
-                <path
-                  refId="Package\Foreach Loop Container 1\FileExists.Paths[Excel Source Output]"
-                  endId="Package\Foreach Loop Container 1\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input]"
-                  name="Excel Source Output"
-                  startId="Package\Foreach Loop Container 1\FileExists\Excel Source.Outputs[Excel Source Output]" />
-              </paths>
-            </pipeline>
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Foreach Loop Container 1\Script Task"
-          DTS:CreationName="Microsoft.ScriptTask"
-          DTS:Description="Script Task"
-          DTS:DTSID="{297D3128-B7EF-4FD9-805A-4AE4623C7DA2}"
-          DTS:ExecutableType="Microsoft.ScriptTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Script Task"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <ScriptProject
-              Name="ST_a64b56f928254af0ad0904833c16e8ea"
-              VSTAMajorVersion="15"
-              VSTAMinorVersion="0"
-              Language="CSharp"
-              ReadOnlyVariables="User::ExcelFilePath,User::FilePath"
-              ReadWriteVariables="User::Existe_int">
-              <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_a64b56f928254af0ad0904833c16e8ea")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_a64b56f928254af0ad0904833c16e8ea")]
-[assembly: AssemblyCopyright("Copyright @  2023")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Resources.resx"
-                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+                      externalMetadataColumnId="Package\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Distribuidor]"
+                      length="255"
+                      lineageId="Package\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Distribuidor]"
+                      name="Distribuidor"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Fecha]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Fecha]"
+                      length="255"
+                      lineageId="Package\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Fecha]"
+                      name="Fecha"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Tienda oficial]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Tienda oficial]"
+                      length="255"
+                      lineageId="Package\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Tienda oficial]"
+                      name="Tienda oficial"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Nro# publicación]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Nro# publicación]"
+                      length="255"
+                      lineageId="Package\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Nro# publicación]"
+                      name="Nro# publicación"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Título]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Título]"
+                      length="255"
+                      lineageId="Package\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Título]"
+                      name="Título"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Tipo de publicación]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Tipo de publicación]"
+                      length="255"
+                      lineageId="Package\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Tipo de publicación]"
+                      name="Tipo de publicación"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Unidades vendidas]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Unidades vendidas]"
+                      lineageId="Package\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Unidades vendidas]"
+                      name="Unidades vendidas"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Precio por unidad]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Precio por unidad]"
+                      lineageId="Package\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Precio por unidad]"
+                      name="Precio por unidad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Total]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Total]"
+                      lineageId="Package\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Total]"
+                      name="Total"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Output].Columns[F10]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[F10]"
+                      lineageId="Package\FileExists\Excel Source.Outputs[Excel Source Output].Columns[F10]"
+                      name="F10"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Distribuidor]"
+                      dataType="wstr"
+                      length="255"
+                      name="Distribuidor" />
+                    <externalMetadataColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Fecha]"
+                      dataType="wstr"
+                      length="255"
+                      name="Fecha" />
+                    <externalMetadataColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Tienda oficial]"
+                      dataType="wstr"
+                      length="255"
+                      name="Tienda oficial" />
+                    <externalMetadataColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Nro# publicación]"
+                      dataType="wstr"
+                      length="255"
+                      name="Nro# publicación" />
+                    <externalMetadataColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Título]"
+                      dataType="wstr"
+                      length="255"
+                      name="Título" />
+                    <externalMetadataColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Tipo de publicación]"
+                      dataType="wstr"
+                      length="255"
+                      name="Tipo de publicación" />
+                    <externalMetadataColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Unidades vendidas]"
+                      dataType="r8"
+                      name="Unidades vendidas" />
+                    <externalMetadataColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Precio por unidad]"
+                      dataType="cy"
+                      name="Precio por unidad" />
+                    <externalMetadataColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[Total]"
+                      dataType="cy"
+                      name="Total" />
+                    <externalMetadataColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[F10]"
+                      dataType="cy"
+                      name="F10" />
+                    <externalMetadataColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Output].ExternalColumns[F11]"
+                      dataType="wstr"
+                      length="255"
+                      name="F11" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\FileExists\Excel Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Distribuidor]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Distribuidor]"
+                      name="Distribuidor" />
+                    <outputColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Fecha]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Fecha]"
+                      name="Fecha" />
+                    <outputColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Tienda oficial]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Tienda oficial]"
+                      name="Tienda oficial" />
+                    <outputColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Nro# publicación]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Nro# publicación]"
+                      name="Nro# publicación" />
+                    <outputColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Título]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Título]"
+                      name="Título" />
+                    <outputColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Tipo de publicación]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Tipo de publicación]"
+                      name="Tipo de publicación" />
+                    <outputColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Unidades vendidas]"
+                      dataType="r8"
+                      lineageId="Package\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Unidades vendidas]"
+                      name="Unidades vendidas" />
+                    <outputColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Precio por unidad]"
+                      dataType="cy"
+                      lineageId="Package\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Precio por unidad]"
+                      name="Precio por unidad" />
+                    <outputColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Total]"
+                      dataType="cy"
+                      lineageId="Package\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[Total]"
+                      name="Total" />
+                    <outputColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[F10]"
+                      dataType="cy"
+                      lineageId="Package\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[F10]"
+                      name="F10" />
+                    <outputColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\FileExists\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\FileExists\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[publicaciones_internet]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\FileExists\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{3E711310-CF6C-4A7C-BFBE-087E31A2632F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SQLServer-ferrumdba.STA.pbi_ferrum]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Distribuidor]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Distribuidor"
+                      externalMetadataColumnId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[distribuidor]"
+                      lineageId="Package\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Distribuidor]" />
+                    <inputColumn
+                      refId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Total]"
+                      cachedDataType="cy"
+                      cachedName="Total"
+                      externalMetadataColumnId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[total]"
+                      lineageId="Package\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Total]" />
+                    <inputColumn
+                      refId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Fecha]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Fecha"
+                      externalMetadataColumnId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fecha_publicacion]"
+                      lineageId="Package\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Fecha]" />
+                    <inputColumn
+                      refId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tienda oficial]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Tienda oficial"
+                      externalMetadataColumnId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tienda_oficial]"
+                      lineageId="Package\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Tienda oficial]" />
+                    <inputColumn
+                      refId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Nro# publicación]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Nro# publicación"
+                      externalMetadataColumnId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nro_publicacion]"
+                      lineageId="Package\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Nro# publicación]" />
+                    <inputColumn
+                      refId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Título]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Título"
+                      externalMetadataColumnId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[titulo]"
+                      lineageId="Package\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Título]" />
+                    <inputColumn
+                      refId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tipo de publicación]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Tipo de publicación"
+                      externalMetadataColumnId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[destaque]"
+                      lineageId="Package\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Tipo de publicación]" />
+                    <inputColumn
+                      refId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Unidades vendidas]"
+                      cachedDataType="r8"
+                      cachedName="Unidades vendidas"
+                      externalMetadataColumnId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[unidades_vendidas]"
+                      lineageId="Package\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Unidades vendidas]" />
+                    <inputColumn
+                      refId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Precio por unidad]"
+                      cachedDataType="cy"
+                      cachedName="Precio por unidad"
+                      externalMetadataColumnId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[precio_por_unidad]"
+                      lineageId="Package\FileExists\Excel Source.Outputs[Excel Source Output].Columns[Precio por unidad]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[row_id]"
+                      dataType="i4"
+                      name="row_id" />
+                    <externalMetadataColumn
+                      refId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[distribuidor]"
+                      dataType="wstr"
+                      length="100"
+                      name="distribuidor" />
+                    <externalMetadataColumn
+                      refId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fecha_publicacion]"
+                      dataType="wstr"
+                      length="50"
+                      name="fecha_publicacion" />
+                    <externalMetadataColumn
+                      refId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tienda_oficial]"
+                      dataType="wstr"
+                      length="100"
+                      name="tienda_oficial" />
+                    <externalMetadataColumn
+                      refId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nro_publicacion]"
+                      dataType="wstr"
+                      length="50"
+                      name="nro_publicacion" />
+                    <externalMetadataColumn
+                      refId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[titulo]"
+                      dataType="wstr"
+                      length="255"
+                      name="titulo" />
+                    <externalMetadataColumn
+                      refId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[destaque]"
+                      dataType="wstr"
+                      length="50"
+                      name="destaque" />
+                    <externalMetadataColumn
+                      refId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[unidades_vendidas]"
+                      dataType="wstr"
+                      length="50"
+                      name="unidades_vendidas" />
+                    <externalMetadataColumn
+                      refId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[precio_por_unidad]"
+                      dataType="wstr"
+                      length="50"
+                      name="precio_por_unidad" />
+                    <externalMetadataColumn
+                      refId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[total]"
+                      dataType="wstr"
+                      length="50"
+                      name="total" />
+                    <externalMetadataColumn
+                      refId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fecha]"
+                      dataType="dbTimeStamp"
+                      name="fecha" />
+                    <externalMetadataColumn
+                      refId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[identificador]"
+                      dataType="wstr"
+                      length="100"
+                      name="identificador" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\FileExists\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\FileExists\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\FileExists\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\FileExists\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\FileExists\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\FileExists.Paths[Excel Source Output]"
+              endId="Package\FileExists\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Excel Source Output"
+              startId="Package\FileExists\Excel Source.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\No Existe"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{947fc925-5877-4244-a422-390c3567c9e1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="No Existe"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F9D82601-F1B2-4CEB-A5C5-7DAF93C90C83}"
+          SQLTask:SqlStatementSource="update DW_Procesos_Info&#xA;set estado_Key = 8 &#xA;WHERE job_key = 201 and fecha_ejecucion = getdate()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Publicacione_hits_old"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{49D4DB23-B401-43CF-B35B-F1B0735C4720}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Publicacione_hits_old"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F9D82601-F1B2-4CEB-A5C5-7DAF93C90C83}"
+          SQLTask:SqlStatementSource="exec ML_PUBLICACIONES_HITS_OLD" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Script Task"
+      DTS:CreationName="Microsoft.ScriptTask"
+      DTS:Description="Script Task"
+      DTS:DTSID="{297D3128-B7EF-4FD9-805A-4AE4623C7DA2}"
+      DTS:ExecutableType="Microsoft.ScriptTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Script Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ScriptProject
+          Name="ST_a64b56f928254af0ad0904833c16e8ea"
+          VSTAMajorVersion="15"
+          VSTAMinorVersion="0"
+          Language="CSharp"
+          ReadOnlyVariables="User::ExcelFilePath,User::FilePath"
+          ReadWriteVariables="User::Existe_int">
+          <ProjectItem
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Resources.resx"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -951,9 +921,9 @@ using System.Runtime.CompilerServices;
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
-              <ProjectItem
-                Name="ST_a64b56f928254af0ad0904833c16e8ea.csproj"
-                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+          <ProjectItem
+            Name="ST_a64b56f928254af0ad0904833c16e8ea.csproj"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -1037,9 +1007,9 @@ using System.Runtime.CompilerServices;
     </VisualStudio>
   </ProjectExtensions>
 </Project>]]></ProjectItem>
-              <ProjectItem
-                Name="ScriptMain.cs"
-                Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
+          <ProjectItem
+            Name="ScriptMain.cs"
+            Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
 /* The Script Task allows you to perform virtually any operation that can be accomplished in
  * a .Net application within the context of an Integration Services control flow. 
  * 
@@ -1131,21 +1101,36 @@ namespace ST_a64b56f928254af0ad0904833c16e8ea
         /// Before returning from this method, set the value of Dts.TaskResult to indicate success or failure.
         /// To open Help, press F1.
         /// </summary>
+        //public void Main()
+        //{
+        //    // TODO: Add your code here
+        //    //######################## AGREGADO PARA VALIDACIÓN ###########################
+        //    Dts.Variables["Existe_int"].Value = 0;
+        //    string excelFileSourde = Dts.Variables["ExcelFilePath"].Value.ToString();
+
+        //    if (Dts.Variables["FilePath"].Value.ToString() != excelFileSourde)
+        //    {
+        //        Dts.Variables["Existe_int"].Value = 1;
+        //    }
+        //    //######################## HASTA ACÁ ########################
+        //    Dts.TaskResult = (int)ScriptResults.Success;
+        //}
+
         public void Main()
         {
-            // TODO: Add your code here
-            //######################## AGREGADO PARA VALIDACIÓN ###########################
-            Dts.Variables["Existe_int"].Value = 0;
-            string excelFileSourde = Dts.Variables["ExcelFilePath"].Value.ToString();
+            // Obtenemos la ruta del archivo actual
+            string filePath = Dts.Variables["User::FileName"].Value.ToString();
 
-            if (Dts.Variables["FilePath"].Value.ToString() != excelFileSourde)
+            // Verificamos si la extensión es .xlsm
+            if (Path.GetExtension(filePath).Equals(".xlsx", StringComparison.OrdinalIgnoreCase))
+            {
+                Dts.Variables["Existe_int"].Value = 0;
+            }
+            else
             {
                 Dts.Variables["Existe_int"].Value = 1;
             }
-            //######################## HASTA ACÁ ########################
-            Dts.TaskResult = (int)ScriptResults.Success;
         }
-
 
         #region ScriptResults declaration
         /// <summary>
@@ -1163,15 +1148,15 @@ namespace ST_a64b56f928254af0ad0904833c16e8ea
 
     }
 }]]></ProjectItem>
-              <ProjectItem
-                Name="Project"
-                Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+          <ProjectItem
+            Name="Project"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
 <c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
   <msb:PropertyGroup>
     <msb:CodeName>ST_a64b56f928254af0ad0904833c16e8ea</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>ST_a64b56f928254af0ad0904833c16e8ea</msb:DisplayName>
-    <msb:ProjectId>{EA0FAE71-5DAE-4086-B229-0C7A4CA25D1A}</msb:ProjectId>
+    <msb:ProjectId>{DCF4100A-088D-4CA2-B633-CF4BF736A8B7}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="ST_a64b56f928254af0ad0904833c16e8ea.csproj" />
@@ -1183,9 +1168,9 @@ namespace ST_a64b56f928254af0ad0904833c16e8ea
     <msb:File Include="ScriptMain.cs" />
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.Designer.cs"
-                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+          <ProjectItem
+            Name="Properties\Settings.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
 // <auto-generated>
 //     This code was generated by a tool.
 //
@@ -1212,18 +1197,39 @@ namespace ST_a64b56f928254af0ad0904833c16e8ea.Properties {
         }
     }
 }]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Resources.Designer.cs"
-                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+          <ProjectItem
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_a64b56f928254af0ad0904833c16e8ea")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_a64b56f928254af0ad0904833c16e8ea")]
+[assembly: AssemblyCopyright("Copyright @  2023")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Resources.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
 // <auto-generated>
 //     This code was generated by a tool.
 //
@@ -1289,81 +1295,81 @@ namespace ST_a64b56f928254af0ad0904833c16e8ea.Properties {
         }
     }
 }]]></ProjectItem>
-              <BinaryItem
-                Name="ST_a64b56f928254af0ad0904833c16e8ea.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+          <BinaryItem
+            Name="ST_a64b56f928254af0ad0904833c16e8ea.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAHsQdmQAAAAAAAAAAOAAIiALATAAABAAAAAIAAAAAAAAVi4A
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAHJGwWQAAAAAAAAAAOAAIiALATAAABAAAAAIAAAAAAAAUi4A
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
-ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAAQuAABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAAAuAABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAXA4AAAAgAAAAEAAAAAIA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAWA4AAAAgAAAAEAAAAAIA
 AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAHgEAAAAQAAAAAYAAAASAAAAAAAAAAAAAAAAAABAAABA
-LnJlbG9jAAAMAAAAAGAAAAACAAAAGAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAA4
-LgAAAAAAAEgAAAACAAUAWCEAAPQLAAABAAAAAAAAAEwtAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAABMwAgCUAAAAAQAAEQIoEAAACm8RAAAKcgEAAHBvEgAAChaM
-GwAAAW8TAAAKAigQAAAKbxEAAApyFwAAcG8SAAAKbxQAAApvFQAACgoCKBAAAApvEQAACnIzAABw
-bxIAAApvFAAACm8VAAAKBigWAAAKLCACKBAAAApvEQAACnIBAABwbxIAAAoXjBsAAAFvEwAACgIo
-EAAAChZvFwAACioeAigYAAAKKh4CKBkAAAoqrn4BAAAELR5yRQAAcNADAAACKBoAAApvGwAACnMc
-AAAKgAEAAAR+AQAABCoafgIAAAQqHgKAAgAABCoafgMAAAQqHgIoHQAACioucwgAAAaAAwAABCoA
-AEJTSkIBAAEAAAAAAAwAAAB2NC4wLjMwMzE5AAAAAAUAbAAAANQDAAAjfgAAQAQAAHwFAAAjU3Ry
-aW5ncwAAAAC8CQAAuAAAACNVUwB0CgAAEAAAACNHVUlEAAAAhAoAAHABAAAjQmxvYgAAAAAAAAAC
-AAABVx2iAQkDAAAA+gEzABYAAAEAAAAfAAAABQAAAAYAAAAJAAAAAQAAAB0AAAACAAAAEAAAAAEA
-AAACAAAAAwAAAAQAAAABAAAABAAAAAEAAAABAAAAAACFAwEAAAAAAAYAKwJVBAYAugJVBAYAdwFC
-BA8AyQQAAAYApAEDBAYADgIDBAYA7wEDBAYAoQIDBAYASwIDBAYAZAIDBAYAuwEDBAYA1gHyAgoA
-fwI0AwoA9gA0AwYAvQO2AwYAWgFCBAYAPAW2AwYAJQR1BAYAFQTuAw4AKgFvAw4AiwFvAw4AEgHZ
-AwYAPwFVBAoAXQM0AxIACwWhABIAdAChAAYAAQC2AwYADgO2AwYAwQC2AwYAfQC2AwYAYgUDBAAA
-AAAHAAAAAAABAAEAAQAQAM4DNwA5AAEAAQAAABAAfATYBEUAAQADAAABEAAVBdgEWQADAAcAAwEA
-AC4FAAA9AAQACgARAMIDcQARAOYAdQARAGQAeQAGBi8AfQBWgB4FgABWgMYAgABQIAAAAACGANQD
-BgABAPAgAAAAAIYYNQQGAAEA+CAAAAAAgxg1BAYAAQAAIQAAAACTCCEEhAABACwhAAAAAJMIzgCJ
-AAEAMyEAAAAAkwjaAI4AAQA7IQAAAACWCEMFlAACAEIhAAAAAIYYNQQGAAIASiEAAAAAkRg7BJkA
-AgAAAAEA7AIJADUEAQARADUEBgAZADUECgApADUEEAAxADUEEAA5ADUEEABBADUEEABJADUEEABR
-ADUEEABZADUEEABhADUEEABpADUEBgCBADUEBgCpADUEFQC5ADUEBgBxACYFHwDBAAcFJADJAK0D
-KQDRAOICLwDRANgCNACJAAwDOADhAGsFPADBAE8FAQBxADUEBgCJADUEBgDpAI8AQgDpAF4FSQCR
-ADUETgCxADUEBgAIABQAZwAIABgAbAApAHMA1AAuAAsArAAuABMAtQAuABsA1AAuACMA3QAuACsA
-BgEuADMABgEuADsABgEuAEMA3QAuAEsADAEuAFMABgEuAFsAIwFDAGMAbABJAHMA1ABhAHsAbABj
-AGsAbAAbAAMAAQAEAAMAAAAlBJ0AAADuAKIAAABHBacAAgAEAAMAAgAFAAUAAQAGAAUAAgAHAAcA
-BIAAAAEAAABmIeVUAAAAAAAANwAAAAQAAAAAAAAAAAAAAFUAWwAAAAAADwAAAAAAAAAAAAAAXgAV
-AwAAAAAEAAAAAAAAAAAAAABVALYDAAAAAA8AAAAAAAAAAAAAAF4AEAAAAAAAAAAAAAEAAACGBAAA
-BQACAAAAAEludDMyADxNb2R1bGU+AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuTWFuYWdlZERUUwB2YWx1
-ZV9fAFNUX2E2NGI1NmY5MjgyNTRhZjBhZDA5MDQ4MzNjMTZlOGVhAG1zY29ybGliAGRlZmF1bHRJ
-bnN0YW5jZQBWYXJpYWJsZQBSdW50aW1lVHlwZUhhbmRsZQBHZXRUeXBlRnJvbUhhbmRsZQBNaWNy
-b3NvZnQuU3FsU2VydmVyLkR0cy5SdW50aW1lAFR5cGUARmFpbHVyZQBnZXRfQ3VsdHVyZQBzZXRf
-Q3VsdHVyZQByZXNvdXJjZUN1bHR1cmUAVlNUQVJUU2NyaXB0T2JqZWN0TW9kZWxCYXNlAEFwcGxp
-Y2F0aW9uU2V0dGluZ3NCYXNlAEVkaXRvckJyb3dzYWJsZVN0YXRlAENvbXBpbGVyR2VuZXJhdGVk
-QXR0cmlidXRlAERlYnVnZ2VyTm9uVXNlckNvZGVBdHRyaWJ1dGUARGVidWdnYWJsZUF0dHJpYnV0
-ZQBFZGl0b3JCcm93c2FibGVBdHRyaWJ1dGUAQXNzZW1ibHlUaXRsZUF0dHJpYnV0ZQBBc3NlbWJs
-eVRyYWRlbWFya0F0dHJpYnV0ZQBUYXJnZXRGcmFtZXdvcmtBdHRyaWJ1dGUAQXNzZW1ibHlDb25m
-aWd1cmF0aW9uQXR0cmlidXRlAEFzc2VtYmx5RGVzY3JpcHRpb25BdHRyaWJ1dGUAQ29tcGlsYXRp
-b25SZWxheGF0aW9uc0F0dHJpYnV0ZQBBc3NlbWJseVByb2R1Y3RBdHRyaWJ1dGUAQXNzZW1ibHlD
-b3B5cmlnaHRBdHRyaWJ1dGUAU1NJU1NjcmlwdFRhc2tFbnRyeVBvaW50QXR0cmlidXRlAEFzc2Vt
-Ymx5Q29tcGFueUF0dHJpYnV0ZQBSdW50aW1lQ29tcGF0aWJpbGl0eUF0dHJpYnV0ZQBnZXRfVmFs
-dWUAc2V0X1ZhbHVlAHZhbHVlAFN5c3RlbS5SdW50aW1lLlZlcnNpb25pbmcAVG9TdHJpbmcATWlj
-cm9zb2Z0LlNxbFNlcnZlci5TY3JpcHRUYXNrAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlRhc2tz
-LlNjcmlwdFRhc2sAU2NyaXB0T2JqZWN0TW9kZWwAU3lzdGVtLkNvbXBvbmVudE1vZGVsAFNUX2E2
-NGI1NmY5MjgyNTRhZjBhZDA5MDQ4MzNjMTZlOGVhLmRsbABnZXRfSXRlbQBTeXN0ZW0ARW51bQBy
-ZXNvdXJjZU1hbgBTY3JpcHRNYWluAFN5c3RlbS5Db25maWd1cmF0aW9uAFN5c3RlbS5HbG9iYWxp
-emF0aW9uAFN5c3RlbS5SZWZsZWN0aW9uAEN1bHR1cmVJbmZvAGdldF9SZXNvdXJjZU1hbmFnZXIA
-LmN0b3IALmNjdG9yAFN5c3RlbS5EaWFnbm9zdGljcwBTeXN0ZW0uUnVudGltZS5Db21waWxlclNl
-cnZpY2VzAFN5c3RlbS5SZXNvdXJjZXMAU1RfYTY0YjU2ZjkyODI1NGFmMGFkMDkwNDgzM2MxNmU4
-ZWEuUHJvcGVydGllcy5SZXNvdXJjZXMucmVzb3VyY2VzAERlYnVnZ2luZ01vZGVzAFNUX2E2NGI1
-NmY5MjgyNTRhZjBhZDA5MDQ4MzNjMTZlOGVhLlByb3BlcnRpZXMAZ2V0X1ZhcmlhYmxlcwBTZXR0
-aW5ncwBTdWNjZXNzAGdldF9EdHMAU2NyaXB0UmVzdWx0cwBPYmplY3QAZ2V0X0RlZmF1bHQAc2V0
-X1Rhc2tSZXN1bHQAZ2V0X0Fzc2VtYmx5AG9wX0luZXF1YWxpdHkAAAAAABVFAHgAaQBzAHQAZQBf
-AGkAbgB0AAAbRQB4AGMAZQBsAEYAaQBsAGUAUABhAHQAaAAAEUYAaQBsAGUAUABhAHQAaAAAcVMA
-VABfAGEANgA0AGIANQA2AGYAOQAyADgAMgA1ADQAYQBmADAAYQBkADAAOQAwADQAOAAzADMAYwAx
-ADYAZQA4AGUAYQAuAFAAcgBvAHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAAAHdH
-u1192W1CsVKQSXN4oOMABCABAQgDIAABBSABARERBCABAQ4FIAEBEVEDBwEOBCAAEmEEIAASZQUg
-ARJpHAQgAQEcAyAAHAMgAA4FAAICDg4GAAESdRF5BCAAEn0GIAIBDhJ9CLd6XFYZNOCJCImEXc2A
-gMyRBAAAAAAEAQAAAAMGEkkDBhJNAwYSEAIGCAMGERQEAAASSQQAABJNBQABARJNBAAAEhADAAAB
-BAgAEkkECAASTQQIABIQCAEACAAAAAAAHgEAAQBUAhZXcmFwTm9uRXhjZXB0aW9uVGhyb3dzAQgB
-AAIAAAAAACgBACNTVF9hNjRiNTZmOTI4MjU0YWYwYWQwOTA0ODMzYzE2ZThlYQAABQEAAAAAFgEA
-EUNvcHlyaWdodCBAICAyMDIzAABJAQAaLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0LjcBAFQOFEZy
-YW1ld29ya0Rpc3BsYXlOYW1lEi5ORVQgRnJhbWV3b3JrIDQuNwAAALQAAADOyu++AQAAAJEAAABs
-U3lzdGVtLlJlc291cmNlcy5SZXNvdXJjZVJlYWRlciwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAu
-MCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5I1N5c3Rl
-bS5SZXNvdXJjZXMuUnVudGltZVJlc291cmNlU2V0AgAAAAAAAAAAAAAAUEFEUEFEULQAAAAsLgAA
-AAAAAAAAAABGLgAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOC4AAAAAAAAAAAAAAABfQ29yRGxs
-TWFpbgBtc2NvcmVlLmRsbAAAAAAA/yUAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAGAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAA0
+LgAAAAAAAEgAAAACAAUAOCEAABAMAAABAAAAAAAAAEgtAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAABMwAwBzAAAAAAAAAAIoEAAACm8RAAAKcgEAAHBvEgAACm8T
+AAAKbxQAAAooFQAACnIfAABwG28WAAAKLCECKBAAAApvEQAACnIrAABwbxIAAAoWjB4AAAFvFwAA
+CioCKBAAAApvEQAACnIrAABwbxIAAAoXjB4AAAFvFwAACioeAigYAAAKKh4CKBkAAAoqrn4BAAAE
+LR5yQQAAcNADAAACKBoAAApvGwAACnMcAAAKgAEAAAR+AQAABCoafgIAAAQqHgKAAgAABCoafgMA
+AAQqHgIoHQAACioucwgAAAaAAwAABCoAAABCU0pCAQABAAAAAAAMAAAAdjQuMC4zMDMxOQAAAAAF
+AGwAAADcAwAAI34AAEgEAACQBQAAI1N0cmluZ3MAAAAA2AkAALQAAAAjVVMAjAoAABAAAAAjR1VJ
+RAAAAJwKAAB0AQAAI0Jsb2IAAAAAAAAAAgAAAVcdoAEJAwAAAPoBMwAWAAABAAAAIQAAAAUAAAAG
+AAAACQAAAAEAAAAdAAAAAgAAABAAAAACAAAAAwAAAAQAAAABAAAABAAAAAEAAAABAAAAAACUAwEA
+AAAAAAYANQKCBAYAxAKCBAYAgQFvBA8A9gQAAAYArgEfBAYAGAIfBAYA+QEfBAYAqwIfBAYAVQIf
+BAYAbgIfBAYAxQEfBAYA4AH8AgoAiQJDAwoAAAFDAwYAzAPFAwYAZAFvBAYAcAXFAwYAUgSiBAYA
+QgQKBA4ANAF+Aw4AlQF+Aw4AHAH1AwYASQGCBAoAbANDAxIAOAWrABIAfgCrAAYAHwMQAAYAGAPF
+AwYAMQTFAwYAAQDFAwYAywDFAwYAhwDFAwYAhwUfBAAAAAAHAAAAAAABAAEAAQAQAN0DQQA5AAEA
+AQAAABAAqQQFBUUAAQADAAABEABCBQUFWQADAAcAAwEAAGIFAAA9AAQACgARANEDdgARAPAAegAR
+AG4AfgAGBjkAggBWgFIFhQBWgNAAhQBQIAAAAACGAOMDBgABAM8gAAAAAIYYYgQGAAEA1yAAAAAA
+gxhiBAYAAQDfIAAAAACTCE4EiQABAAshAAAAAJMI2ACOAAEAEiEAAAAAkwjkAJMAAQAaIQAAAACW
+CHcFmQACACEhAAAAAIYYYgQGAAIAKSEAAAAAkRhoBJ4AAgAAAAEA9gIJAGIEAQARAGIEBgAZAGIE
+CgApAGIEEAAxAGIEEAA5AGIEEABBAGIEEABJAGIEEABRAGIEEABZAGIEEABhAGIEEABpAGIEBgCB
+AGIEBgCpAGIEFQC5AGIEBgBxAFoFGwDBADQFIADJALwDJQDRAOICKwCJABYDLwDZAOgDMwDhAEsF
+OADRAOwCPwBxAGIEBgCJAGIEBgD5AJkARAD5AIMFTACRAGIEUgCxAGIEBgAIABQAbAAIABgAcQAp
+AHMA2QAuAAsAsQAuABMAugAuABsA2QAuACMA4gAuACsACwEuADMACwEuADsACwEuAEMA4gAuAEsA
+EQEuAFMACwEuAFsAKAFDAGMAcQBJAHMA2QBhAHsAcQBjAGsAcQADAAEABAADAAAAUgSiAAAA+ACn
+AAAAewWsAAIABAADAAIABQAFAAEABgAFAAIABwAHAASAAAABAAAAnyEhXQAAAAAAAEEAAAAEAAAA
+AAAAAAAAAABaAGUAAAAAAA8AAAAAAAAAAAAAAGMAJAMAAAAABAAAAAAAAAAAAAAAWgDFAwAAAAAP
+AAAAAAAAAAAAAABjABoAAAAAAAAAAAABAAAAswQAAAUAAgAAAAAAAEludDMyADxNb2R1bGU+AFN5
+c3RlbS5JTwBNaWNyb3NvZnQuU3FsU2VydmVyLk1hbmFnZWREVFMAdmFsdWVfXwBTVF9hNjRiNTZm
+OTI4MjU0YWYwYWQwOTA0ODMzYzE2ZThlYQBtc2NvcmxpYgBkZWZhdWx0SW5zdGFuY2UAVmFyaWFi
+bGUAUnVudGltZVR5cGVIYW5kbGUAR2V0VHlwZUZyb21IYW5kbGUATWljcm9zb2Z0LlNxbFNlcnZl
+ci5EdHMuUnVudGltZQBUeXBlAEZhaWx1cmUAZ2V0X0N1bHR1cmUAc2V0X0N1bHR1cmUAcmVzb3Vy
+Y2VDdWx0dXJlAFZTVEFSVFNjcmlwdE9iamVjdE1vZGVsQmFzZQBBcHBsaWNhdGlvblNldHRpbmdz
+QmFzZQBFZGl0b3JCcm93c2FibGVTdGF0ZQBDb21waWxlckdlbmVyYXRlZEF0dHJpYnV0ZQBEZWJ1
+Z2dlck5vblVzZXJDb2RlQXR0cmlidXRlAERlYnVnZ2FibGVBdHRyaWJ1dGUARWRpdG9yQnJvd3Nh
+YmxlQXR0cmlidXRlAEFzc2VtYmx5VGl0bGVBdHRyaWJ1dGUAQXNzZW1ibHlUcmFkZW1hcmtBdHRy
+aWJ1dGUAVGFyZ2V0RnJhbWV3b3JrQXR0cmlidXRlAEFzc2VtYmx5Q29uZmlndXJhdGlvbkF0dHJp
+YnV0ZQBBc3NlbWJseURlc2NyaXB0aW9uQXR0cmlidXRlAENvbXBpbGF0aW9uUmVsYXhhdGlvbnNB
+dHRyaWJ1dGUAQXNzZW1ibHlQcm9kdWN0QXR0cmlidXRlAEFzc2VtYmx5Q29weXJpZ2h0QXR0cmli
+dXRlAFNTSVNTY3JpcHRUYXNrRW50cnlQb2ludEF0dHJpYnV0ZQBBc3NlbWJseUNvbXBhbnlBdHRy
+aWJ1dGUAUnVudGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUAZ2V0X1ZhbHVlAHNldF9WYWx1ZQB2
+YWx1ZQBTeXN0ZW0uUnVudGltZS5WZXJzaW9uaW5nAFRvU3RyaW5nAFBhdGgATWljcm9zb2Z0LlNx
+bFNlcnZlci5TY3JpcHRUYXNrAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlRhc2tzLlNjcmlwdFRh
+c2sAU2NyaXB0T2JqZWN0TW9kZWwAU3lzdGVtLkNvbXBvbmVudE1vZGVsAFNUX2E2NGI1NmY5Mjgy
+NTRhZjBhZDA5MDQ4MzNjMTZlOGVhLmRsbABnZXRfSXRlbQBTeXN0ZW0ARW51bQByZXNvdXJjZU1h
+bgBTY3JpcHRNYWluAEdldEV4dGVuc2lvbgBTeXN0ZW0uQ29uZmlndXJhdGlvbgBTeXN0ZW0uR2xv
+YmFsaXphdGlvbgBTeXN0ZW0uUmVmbGVjdGlvbgBTdHJpbmdDb21wYXJpc29uAEN1bHR1cmVJbmZv
+AGdldF9SZXNvdXJjZU1hbmFnZXIALmN0b3IALmNjdG9yAFN5c3RlbS5EaWFnbm9zdGljcwBTeXN0
+ZW0uUnVudGltZS5Db21waWxlclNlcnZpY2VzAFN5c3RlbS5SZXNvdXJjZXMAU1RfYTY0YjU2Zjky
+ODI1NGFmMGFkMDkwNDgzM2MxNmU4ZWEuUHJvcGVydGllcy5SZXNvdXJjZXMucmVzb3VyY2VzAERl
+YnVnZ2luZ01vZGVzAFNUX2E2NGI1NmY5MjgyNTRhZjBhZDA5MDQ4MzNjMTZlOGVhLlByb3BlcnRp
+ZXMAZ2V0X1ZhcmlhYmxlcwBTZXR0aW5ncwBFcXVhbHMAU3VjY2VzcwBnZXRfRHRzAFNjcmlwdFJl
+c3VsdHMAT2JqZWN0AGdldF9EZWZhdWx0AGdldF9Bc3NlbWJseQAAHVUAcwBlAHIAOgA6AEYAaQBs
+AGUATgBhAG0AZQAACy4AeABsAHMAeAAAFUUAeABpAHMAdABlAF8AaQBuAHQAAHFTAFQAXwBhADYA
+NABiADUANgBmADkAMgA4ADIANQA0AGEAZgAwAGEAZAAwADkAMAA0ADgAMwAzAGMAMQA2AGUAOABl
+AGEALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAABz9ZeYgNhTRZjo
+e/CjzuF+AAQgAQEIAyAAAQUgAQEREQQgAQEOBSABARFRBCAAEmEEIAASZQUgARJpHAMgABwDIAAO
+BAABDg4GIAICDhF1BCABARwHAAESfRGAgQUgABKAhQcgAgEOEoCFCLd6XFYZNOCJCImEXc2AgMyR
+BAAAAAAEAQAAAAMGEkkDBhJNAwYSEAIGCAMGERQEAAASSQQAABJNBQABARJNBAAAEhADAAABBAgA
+EkkECAASTQQIABIQCAEACAAAAAAAHgEAAQBUAhZXcmFwTm9uRXhjZXB0aW9uVGhyb3dzAQgBAAIA
+AAAAACgBACNTVF9hNjRiNTZmOTI4MjU0YWYwYWQwOTA0ODMzYzE2ZThlYQAABQEAAAAAFgEAEUNv
+cHlyaWdodCBAICAyMDIzAABJAQAaLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0LjcBAFQOFEZyYW1l
+d29ya0Rpc3BsYXlOYW1lEi5ORVQgRnJhbWV3b3JrIDQuNwAAtAAAAM7K774BAAAAkQAAAGxTeXN0
+ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBD
+dWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkjU3lzdGVtLlJl
+c291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQQURQtAAAACguAAAAAAAA
+AAAAAEIuAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0LgAAAAAAAAAAAAAAAF9Db3JEbGxNYWlu
+AG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1373,14 +1379,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAABABAAAAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAA
 AABIAAAAWEAAABoEAAAAAAAAAAAAABoENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBP
-AAAAAAC9BO/+AAABAAAAAQDlVGYhAAABAOVUZiE/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAA
+AAAAAAC9BO/+AAABAAAAAQAhXZ8hAAABACFdnyE/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAA
 RAAAAAEAVgBhAHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBv
 AG4AAAAAAAAAsAR6AwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAABWAwAAAQAwADAA
 MAAwADAANABiADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABh
 AG4AeQBOAGEAbQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4A
 AAAAAFMAVABfAGEANgA0AGIANQA2AGYAOQAyADgAMgA1ADQAYQBmADAAYQBkADAAOQAwADQAOAAz
 ADMAYwAxADYAZQA4AGUAYQAAAD4ADwABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAA
-LgA4ADUANQAwAC4AMgAxADcAMwAzAAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAA
+LgA4ADYAMAA3AC4AMgAzADgANAAxAAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAA
 AFMAVABfAGEANgA0AGIANQA2AGYAOQAyADgAMgA1ADQAYQBmADAAYQBkADAAOQAwADQAOAAzADMA
 YwAxADYAZQA4AGUAYQAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0
 AAAAQwBvAHAAeQByAGkAZwBoAHQAIABAACAAIAAyADAAMgAzAAAAKgABAAEATABlAGcAYQBsAFQA
@@ -1389,15 +1395,15 @@ AGEAbQBlAAAAUwBUAF8AYQA2ADQAYgA1ADYAZgA5ADIAOAAyADUANABhAGYAMABhAGQAMAA5ADAA
 NAA4ADMAMwBjADEANgBlADgAZQBhAC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBt
 AGUAAAAAAFMAVABfAGEANgA0AGIANQA2AGYAOQAyADgAMgA1ADQAYQBmADAAYQBkADAAOQAwADQA
 OAAzADMAYwAxADYAZQA4AGUAYQAAAEIADwABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAA
-ADEALgAwAC4AOAA1ADUAMAAuADIAMQA3ADMAMwAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAA
-VgBlAHIAcwBpAG8AbgAAADEALgAwAC4AOAA1ADUAMAAuADIAMQA3ADMAMwAAAAAAAAAAAAAAAAAA
+ADEALgAwAC4AOAA2ADAANwAuADIAMwA4ADQAMQAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAA
+VgBlAHIAcwBpAG8AbgAAADEALgAwAC4AOAA2ADAANwAuADIAMwA4ADQAMQAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAwAAABYPgAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAwAAABUPgAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1407,57 +1413,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
-            </ScriptProject>
-          </DTS:ObjectData>
-        </DTS:Executable>
-      </DTS:Executables>
-      <DTS:PrecedenceConstraints>
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Foreach Loop Container 1.PrecedenceConstraints[Constraint]"
-          DTS:CreationName=""
-          DTS:DTSID="{54A5FB38-7645-4239-B8B4-D4B9CA39B16F}"
-          DTS:EvalOp="3"
-          DTS:Expression="@Existe_int&gt;0"
-          DTS:From="Package\Foreach Loop Container 1\Script Task"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint"
-          DTS:To="Package\Foreach Loop Container 1\Data Flow Task" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Foreach Loop Container 1.PrecedenceConstraints[Constraint 1]"
-          DTS:CreationName=""
-          DTS:DTSID="{612B293F-0CB6-46F8-BD48-8516118C65AC}"
-          DTS:EvalOp="3"
-          DTS:Expression="@Existe_int==0"
-          DTS:From="Package\Foreach Loop Container 1\Script Task"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 1"
-          DTS:To="Package\Foreach Loop Container 1\FileExists" />
-      </DTS:PrecedenceConstraints>
-      <DTS:ForEachVariableMappings>
-        <DTS:ForEachVariableMapping
-          DTS:CreationName=""
-          DTS:DTSID="{AAB8D78B-1374-42D2-A53F-6597C4813559}"
-          DTS:ObjectName="{AAB8D78B-1374-42D2-A53F-6597C4813559}"
-          DTS:ValueIndex="0"
-          DTS:VariableName="User::FileName" />
-      </DTS:ForEachVariableMappings>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Publicacione_hits_old"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
-      DTS:DTSID="{49D4DB23-B401-43CF-B35B-F1B0735C4720}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Publicacione_hits_old"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{F9D82601-F1B2-4CEB-A5C5-7DAF93C90C83}"
-          SQLTask:SqlStatementSource="exec ML_PUBLICACIONES_HITS_OLD" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+        </ScriptProject>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -1482,21 +1438,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{202CBA24-6F13-4E44-BFCE-82B0BB50CA48}"
+      DTS:DTSID="{A700C2F6-0319-41E8-B60D-D749F6000E6B}"
       DTS:From="Package\Truncate"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Foreach Loop Container 1" />
+      DTS:To="Package\Script Task" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{B8E7BBC6-EC9F-49EA-AF39-7D1CD68E9BC3}"
+      DTS:DTSID="{612B293F-0CB6-46F8-BD48-8516118C65AC}"
       DTS:EvalOp="3"
       DTS:Expression="@Existe_int==0"
-      DTS:From="Package\Foreach Loop Container 1"
+      DTS:From="Package\Script Task"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Cleansing" />
+      DTS:To="Package\FileExists" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
@@ -1513,6 +1469,24 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
       DTS:To="Package\Carpeta procesado" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{24CF43E3-06A4-4242-90DC-FBB82DF482DB}"
+      DTS:From="Package\FileExists"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Cleansing" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{4F19C367-9E87-4723-9405-ABC9F88F7035}"
+      DTS:EvalOp="3"
+      DTS:Expression="@Existe_int == 1"
+      DTS:From="Package\Script Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\No Existe" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -1525,7 +1499,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="158.666666666667,42.6666666666667"
           Id="Package\Carpeta procesado\Create directory"
@@ -1568,97 +1542,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           Id="Package\Cleansing"
           TopLeft="473.580846425657,438.479158516104" />
         <NodeLayout
-          Size="152,42.6666666666667"
-          Id="Package\Foreach Loop Container 1\Data Flow Task"
-          TopLeft="17.3749998230487,108.833329730232" />
-        <NodeLayout
-          Size="122.666666666667,42.6666666666667"
-          Id="Package\Foreach Loop Container 1\FileExists"
-          TopLeft="230.666662941376,106.783329695364" />
-        <NodeLayout
-          Size="132,42.6666666666667"
-          Id="Package\Foreach Loop Container 1\Script Task"
-          TopLeft="109.166663947204,15.9166628892223" />
-        <EdgeLayout
-          Id="Package\Foreach Loop Container 1.PrecedenceConstraints[Constraint]"
-          TopLeft="154.499997280538,58.583329555889">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-61.1249974574891,50.250000174343"
-              Start="0,0"
-              End="-61.1249974574891,42.750000174343">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.4610779153014" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.4610779153014"
-                    Point2="0,20.4610779153014"
-                    Point3="-4,20.4610779153014" />
-                  <mssgle:LineSegment
-                    End="-57.1249974574891,20.4610779153014" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-57.1249974574891,20.4610779153014"
-                    Point2="-61.1249974574891,20.4610779153014"
-                    Point3="-61.1249974574891,24.4610779153014" />
-                  <mssgle:LineSegment
-                    End="-61.1249974574891,42.750000174343" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-38.5624987287446,25.4610779153014,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container 1.PrecedenceConstraints[Constraint 1]"
-          TopLeft="195.833330613871,58.583329555889">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="96.1666656608386,48.200000139475"
-              Start="0,0"
-              End="96.1666656608386,40.700000139475">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.6263473621815" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.6263473621815"
-                    Point2="0,19.6263473621815"
-                    Point3="4,19.6263473621815" />
-                  <mssgle:LineSegment
-                    End="92.1666656608386,19.6263473621815" />
-                  <mssgle:CubicBezierSegment
-                    Point1="92.1666656608386,19.6263473621815"
-                    Point2="96.1666656608386,19.6263473621815"
-                    Point3="96.1666656608386,23.6263473621815" />
-                  <mssgle:LineSegment
-                    End="96.1666656608386,40.700000139475" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="40.0833328304193,24.6263473621815,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="54.812499985471334"
-          IsExpanded="True"
-          PanelSize="382,206.666666666667"
-          Size="382,261.333333333334"
-          Id="Package\Foreach Loop Container 1"
-          TopLeft="17.8348211628114,326.213096864472" />
-        <NodeLayout
           Size="164,42.6666666666667"
           Id="Package\Publicacione_hits_old"
           TopLeft="641.435506324818,437.681346589445" />
@@ -1666,52 +1549,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           Size="121.333333333334,42"
           Id="Package\Truncate"
           TopLeft="152.412697045577,223.776980244749" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="210.957092437528,265.776980244749">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.4361166197231"
-              Start="0,0"
-              End="0,52.9361166197231">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.9361166197231" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="399.834821162811,458.346127690288">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="73.7460252628453,0"
-              Start="0,0"
-              End="66.2460252628453,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="66.2460252628453,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="25.1230126314227,5,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="598.91417975899,459.413585886108">
@@ -1756,24 +1593,176 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="124,42.6666666666667"
+          Id="Package\No Existe"
+          TopLeft="466.249993094909,313.071426396285" />
+        <NodeLayout
+          Size="132,42.6666666666667"
+          Id="Package\Script Task"
+          TopLeft="166.452377647516,367.797615784903" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="232.452377647516,410.46428245157">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="15.940476688069,46.3428573155408"
+              Start="0,0"
+              End="15.940476688069,38.8428573155408">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.1714286577704" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.1714286577704"
+                    Point2="0,23.1714286577704"
+                    Point3="4,23.1714286577704" />
+                  <mssgle:LineSegment
+                    End="11.940476688069,23.1714286577704" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11.940476688069,23.1714286577704"
+                    Point2="15.940476688069,23.1714286577704"
+                    Point3="15.940476688069,27.1714286577704" />
+                  <mssgle:LineSegment
+                    End="15.940476688069,38.8428573155408" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-0.0297616559655012,28.1714286577704,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="122.666666666667,42.6666666666667"
+          Id="Package\FileExists"
+          TopLeft="187.059521002251,456.807139767111" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="213.079363712244,265.776980244749">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="19.3730139352717,102.020635540154"
+              Start="0,0"
+              End="19.3730139352717,94.520635540154">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.010317770077" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,47.010317770077"
+                    Point2="0,51.010317770077"
+                    Point3="4,51.010317770077" />
+                  <mssgle:LineSegment
+                    End="15.3730139352717,51.010317770077" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.3730139352717,51.010317770077"
+                    Point2="19.3730139352717,51.010317770077"
+                    Point3="19.3730139352717,55.010317770077" />
+                  <mssgle:LineSegment
+                    End="19.3730139352717,94.520635540154" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="309.726187668918,478.140473100444">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="163.854658756739,-18.3279812510064"
+              Start="0,0"
+              End="156.354658756739,-18.3279812510064">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="77.9273293783695,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="77.9273293783695,0"
+                    Point2="81.9273293783695,0"
+                    Point3="81.9273293783695,-4" />
+                  <mssgle:LineSegment
+                    End="81.9273293783695,-14.3279812510064" />
+                  <mssgle:CubicBezierSegment
+                    Point1="81.9273293783695,-14.3279812510064"
+                    Point2="81.9273293783695,-18.3279812510064"
+                    Point3="85.9273293783695,-18.3279812510064" />
+                  <mssgle:LineSegment
+                    End="156.354658756739,-18.3279812510064" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="298.452377647516,389.130949118237">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="167.797615447393,-54.7261893886184"
+              Start="0,0"
+              End="160.297615447393,-54.7261893886184">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="79.8988077236966,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="79.8988077236966,0"
+                    Point2="83.8988077236966,0"
+                    Point3="83.8988077236966,-4" />
+                  <mssgle:LineSegment
+                    End="83.8988077236966,-50.7261893886184" />
+                  <mssgle:CubicBezierSegment
+                    Point1="83.8988077236966,-50.7261893886184"
+                    Point2="83.8988077236966,-54.7261893886184"
+                    Point3="87.8988077236966,-54.7261893886184" />
+                  <mssgle:LineSegment
+                    End="160.297615447393,-54.7261893886184" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="75.8988077236966,1,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Foreach Loop Container 1\FileExists">
+    design-time-name="Package\FileExists">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="172,42.6666666666667"
-          Id="Package\Foreach Loop Container 1\FileExists\OLE DB Destination"
+          Id="Package\FileExists\OLE DB Destination"
           TopLeft="434.471153985853,143.523077341502" />
         <NodeLayout
           Size="139.333333333334,42.6666666666667"
-          Id="Package\Foreach Loop Container 1\FileExists\Excel Source"
+          Id="Package\FileExists\Excel Source"
           TopLeft="226.45192301173,151.026923042054" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container 1\FileExists.Paths[Excel Source Output]"
+          Id="Package\FileExists.Paths[Excel Source Output]"
           TopLeft="365.785256345063,168.608333525111">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1798,7 +1787,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container 1\FileExists\Excel Source">
+    design-time-name="Package\FileExists\Excel Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1811,7 +1800,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container 1\FileExists\OLE DB Destination">
+    design-time-name="Package\FileExists\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
